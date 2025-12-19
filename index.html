@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="pixelab - 심플하고 모던한 앱과 게임을 개발하는 픽셀연구소">
+  <title>pixelab | 픽셀연구소</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 네비게이션 -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo"><a href="index.html">pixelab</a></div>
+      <ul class="nav-menu">
+        <li><a href="#home" data-i18n="nav.home">홈</a></li>
+        <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
+        <li><a href="#products" data-i18n="nav.products">제품소개</a></li>
+        <li><a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
+      </ul>
+      <!-- 언어 선택 -->
+      <div class="language-switcher">
+        <button class="lang-btn active" data-lang="ko">KO</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">JP</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 히어로 섹션 -->
+  <section id="home" class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title" data-i18n="hero.title">픽셀연구소</h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">하나하나의 픽셀을 연구하듯</p>
+      <p class="hero-description" data-i18n-html="hero.description">일상생활에 꼭 필요한 앱을 심플하고 모던하게,<br>단순하면서도 아기자기한 게임을 개발합니다.</p>
+      <a href="#products" class="hero-cta" data-i18n="hero.cta">제품 둘러보기</a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- 회사소개 섹션 -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="about.title">회사소개</h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">pixelab에 대하여</p>
+      </div>
+
+      <!-- 우리의 이야기 -->
+      <div class="story-section">
+        <div class="story-content">
+          <h3 data-i18n="about.story.title">우리의 이야기</h3>
+          <p data-i18n="about.story.description">
+            pixelab는 '모든 픽셀에는 의미가 있다'는 철학으로 시작했습니다.
+            화면 속 작은 픽셀 하나하나가 모여 의미 있는 경험을 만들듯이,
+            우리는 일상의 작은 순간들을 더 특별하게 만드는 앱과 게임을 개발합니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- 미션과 비전 -->
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="card-icon">🎯</div>
+          <h3 data-i18n="about.mission.title">우리의 미션</h3>
+          <p data-i18n="about.mission.description">
+            복잡한 일상을 심플하게, 지루한 순간을 즐겁게 만드는 것이 우리의 목표입니다.
+            기술은 복잡할 수 있지만, 사용자 경험은 단순해야 한다고 믿습니다.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <div class="card-icon">🔍</div>
+          <h3 data-i18n="about.vision.title">우리의 비전</h3>
+          <p data-i18n="about.vision.description">
+            모든 픽셀에는 의미가 있습니다. 사용자 경험의 모든 세부사항을 연구하고 개선하여,
+            누구나 쉽고 즐겁게 사용할 수 있는 제품을 만듭니다.
+          </p>
+        </div>
+      </div>
+
+      <!-- 핵심 가치 -->
+      <div class="values-section">
+        <h3 class="values-title" data-i18n="about.values.title">핵심 가치</h3>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="value-icon">✨</div>
+            <h4 data-i18n="about.values.simplicity">심플함</h4>
+            <p data-i18n="about.values.simplicity_desc">불필요한 것을 제거하고 본질에 집중합니다</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🚀</div>
+            <h4 data-i18n="about.values.modern">모던함</h4>
+            <p data-i18n="about.values.modern_desc">최신 기술과 트렌드를 반영한 디자인</p>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🎨</div>
+            <h4 data-i18n="about.values.playful">아기자기함</h4>
+            <p data-i18n="about.values.playful_desc">사용하는 즐거움을 느낄 수 있는 경험</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 개발 철학 -->
+      <div class="philosophy-section">
+        <h3 class="philosophy-title" data-i18n="about.philosophy.title">개발 철학</h3>
+        <div class="philosophy-grid">
+          <div class="philosophy-item">
+            <h4 data-i18n="about.philosophy.point1">사용자를 위한 디자인</h4>
+            <p data-i18n="about.philosophy.point1_desc">기술이 아닌 사람을 중심에 둡니다</p>
+          </div>
+          <div class="philosophy-item">
+            <h4 data-i18n="about.philosophy.point2">픽셀 단위의 완성도</h4>
+            <p data-i18n="about.philosophy.point2_desc">작은 디테일도 놓치지 않습니다</p>
+          </div>
+          <div class="philosophy-item">
+            <h4 data-i18n="about.philosophy.point3">지속적인 개선</h4>
+            <p data-i18n="about.philosophy.point3_desc">끝없이 연구하고 발전합니다</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 제품소개 섹션 (캐러셀) -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="products.title">제품소개</h2>
+        <p class="section-subtitle" data-i18n="products.subtitle">일상을 더 풍요롭게</p>
+      </div>
+
+      <!-- 제품 캐러셀 -->
+      <div class="carousel-wrapper">
+        <button class="carousel-btn carousel-prev" aria-label="Previous">
+          <span>‹</span>
+        </button>
+
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <!-- 제품 1: MP3 Player -->
+            <div class="product-card" data-product="mp3player">
+              <div class="product-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="product-placeholder">🎵</div>
+              </div>
+              <div class="product-info">
+                <h3 data-i18n="products.mp3player.name">MP3 Player</h3>
+                <p class="product-tagline" data-i18n="products.mp3player.tagline">당신의 음악, 심플하게</p>
+                <p class="product-desc" data-i18n="products.mp3player.short_desc">
+                  불필요한 기능은 모두 제거하고 음악 감상에만 집중한 플레이어
+                </p>
+                <span class="product-status" data-i18n="products.mp3player.status">개발 중</span>
+                <a href="products/mp3player.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
+              </div>
+            </div>
+
+            <!-- 제품 2: Pixel Timer -->
+            <div class="product-card" data-product="pixeltimer">
+              <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="product-placeholder">⏱️</div>
+              </div>
+              <div class="product-info">
+                <h3 data-i18n="products.pixeltimer.name">Pixel Timer</h3>
+                <p class="product-tagline" data-i18n="products.pixeltimer.tagline">시간을 픽셀로 표현하다</p>
+                <p class="product-desc" data-i18n="products.pixeltimer.short_desc">
+                  미니멀한 디자인의 타이머와 스톱워치
+                </p>
+                <span class="product-status" data-i18n="products.pixeltimer.status">기획 중</span>
+                <a href="products/pixeltimer.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
+              </div>
+            </div>
+
+            <!-- 제품 3: Daily Memo -->
+            <div class="product-card" data-product="dailymemo">
+              <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="product-placeholder">📝</div>
+              </div>
+              <div class="product-info">
+                <h3 data-i18n="products.dailymemo.name">Daily Memo</h3>
+                <p class="product-tagline" data-i18n="products.dailymemo.tagline">하루를 기록하는 가장 간단한 방법</p>
+                <p class="product-desc" data-i18n="products.dailymemo.short_desc">
+                  매일의 생각을 빠르게 기록하는 심플한 메모 앱
+                </p>
+                <span class="product-status" data-i18n="products.dailymemo.status">기획 중</span>
+                <a href="products/dailymemo.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
+              </div>
+            </div>
+
+            <!-- 제품 4: Block Break -->
+            <div class="product-card" data-product="blockbreak">
+              <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <div class="product-placeholder">🎮</div>
+              </div>
+              <div class="product-info">
+                <h3 data-i18n="products.blockbreak.name">Block Break</h3>
+                <p class="product-tagline" data-i18n="products.blockbreak.tagline">픽셀로 즐기는 클래식 게임</p>
+                <p class="product-desc" data-i18n="products.blockbreak.short_desc">
+                  아기자기한 픽셀 그래픽의 블록 깨기 게임
+                </p>
+                <span class="product-status" data-i18n="products.blockbreak.status">기획 중</span>
+                <a href="products/blockbreak.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Next">
+          <span>›</span>
+        </button>
+      </div>
+
+      <!-- 캐러셀 인디케이터 -->
+      <div class="carousel-indicators">
+        <button class="indicator active" data-index="0"></button>
+        <button class="indicator" data-index="1"></button>
+        <button class="indicator" data-index="2"></button>
+        <button class="indicator" data-index="3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
+          <p data-i18n="footer.description">앱 및 게임 개발</p>
+          <p class="footer-tagline" data-i18n="footer.made_with">Made with passion</p>
+        </div>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/i18n.js"></script>
+  <script src="js/carousel.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

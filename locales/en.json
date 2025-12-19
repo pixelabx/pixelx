@@ -1,0 +1,223 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "privacy": "Privacy Policy",
+    "back_to_home": "Back to Home"
+  },
+  "hero": {
+    "title": "pixelab",
+    "subtitle": "Researching Every Pixel",
+    "description": "We develop simple and modern apps for everyday life,\nand create playful games with minimalist charm.",
+    "cta": "Explore Products",
+    "scroll_hint": "Scroll down to learn more"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "About pixelab",
+    "story": {
+      "title": "Our Story",
+      "description": "pixelab was founded in 2024 with the philosophy that 'every pixel has meaning.' Just as individual pixels come together to create beautiful images on a digital screen, we research and create digital experiences that make small moments in users' daily lives more meaningful and special. Starting as a solo developer, we think about every pixel every day to create authentic products."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "Our goal is to simplify complexity and make boring moments enjoyable. While modern life becomes increasingly complex, we believe technology should make our lives easier. We pursue experiences that are true to their essence over flashy features, and intuitive usability over complex interfaces."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "Every pixel has meaning. We carefully consider every design element, from button border radius to spacing to color saturation. Our vision is to research and improve every detail of the user experience, creating products that anyone can use easily and joyfully, regardless of age or technical skill level."
+    },
+    "values": {
+      "title": "Core Values",
+      "simplicity": "Simplicity",
+      "simplicity_desc": "We find essence in complexity. We boldly remove unnecessary features and keep only what's truly needed.",
+      "modern": "Modern",
+      "modern_desc": "We research the latest design trends and technology, but pursue timeless beauty rather than following trends.",
+      "playful": "Playful",
+      "playful_desc": "We add fun to seriousness and emotion to practicality. We design meticulously so you feel small joys with each use."
+    },
+    "philosophy": {
+      "title": "Development Philosophy",
+      "point1": "User-Centered Design",
+      "point1_desc": "People, not technology, are at the center. We prioritize user experience over developer convenience.",
+      "point2": "Pixel-Perfect Craftsmanship",
+      "point2_desc": "Even a 1-pixel difference matters. We believe small details create big differences and pursue perfection.",
+      "point3": "Continuous Improvement",
+      "point3_desc": "Launch is not the end. We listen to user feedback, constantly research, and build better products every day."
+    },
+    "team": {
+      "title": "Team",
+      "founder": "Lead Developer",
+      "founder_name": "pixelab Founder",
+      "founder_desc": "Driven by passion for app and game development, researching daily to create products users truly need. With the belief that 'good design is invisible,' we aim for user experiences that feel natural."
+    }
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "Enriching Daily Life",
+    "view_details": "View Details",
+    "carousel": {
+      "prev": "Previous Product",
+      "next": "Next Product"
+    },
+    "coming_soon": "Coming Soon",
+    "mp3player": {
+      "name": "MP3 Player",
+      "tagline": "Your Music, Simply",
+      "short_desc": "A music player focused purely on listening, with all unnecessary features removed. Album cover, play button, and your music. That's all you need.",
+      "description": "Simple and intuitive music player",
+      "status": "In Development",
+      "hero_title": "Your Music,\nSimply",
+      "hero_subtitle": "We removed complex settings, flashy effects, and unnecessary features. Only music and you remain.",
+      "feature1_title": "Minimal Interface",
+      "feature1_desc": "Full-screen album cover and play button. Focus solely on your music. Complex menus are hidden, only essential functions are intuitively placed.",
+      "feature2_title": "Intuitive Gestures",
+      "feature2_desc": "Swipe to skip tracks, tap to play/pause, long press to like. Natural controls that need no manual.",
+      "feature3_title": "Perfect Sound Quality",
+      "feature3_desc": "Supports all high-quality formats including FLAC, AAC, and ALAC. Optimized audio engine delivers your music in its purest form.",
+      "feature4_title": "Smart Playlists",
+      "feature4_desc": "Frequently played music, recently added tracks, time-based recommendations. AI learns your music taste and automatically creates perfect playlists.",
+      "specs_title": "Specifications",
+      "specs_platform": "Platform",
+      "specs_platform_value": "iOS 14+, Android 8+",
+      "specs_size": "Size",
+      "specs_size_value": "Approx. 15MB (no additional data)",
+      "specs_format": "Formats",
+      "specs_format_value": "MP3, FLAC, AAC, WAV, ALAC, OGG",
+      "specs_release": "Release",
+      "specs_release_value": "March 2025",
+      "why_title": "Why MP3 Player",
+      "why_desc": "The market already has countless music players. But most are too complex or filled with unnecessary features. We focused only on the essence: 'listening to music.' Nothing to configure, nothing to learn. Just play your music. That's enough."
+    },
+    "pixeltimer": {
+      "name": "Pixel Timer",
+      "tagline": "Visualizing Time in Pixels",
+      "short_desc": "Visualize the flow of time with beautiful pixel animations. Experience the moment when a timer becomes art.",
+      "description": "A beautiful timer that visualizes time",
+      "status": "Planning",
+      "hero_title": "Visualizing Time\nin Pixels",
+      "hero_subtitle": "Instead of a moving second hand, pixels fill up. Experience the passage of time through beautiful animation.",
+      "feature1_title": "Pixel Animation",
+      "feature1_desc": "Unique visual experience as pixels fill one by one as time passes. A 25-minute Pomodoro timer is represented by 25×60 pixels. You don't count time, you see it.",
+      "feature2_title": "Pomodoro Technique",
+      "feature2_desc": "Perfect rhythm of 25 minutes focus, 5 minutes rest. Beautifully implements the scientifically proven method for productivity. Manage your concentration with notifications and statistics.",
+      "feature3_title": "Emotional Themes",
+      "feature3_desc": "Dawn's tranquility, afternoon's energy, night's peace. 12 themes matched to time of day and purpose enhance concentration. Each theme is designed based on color psychology.",
+      "feature4_title": "Gentle Notifications",
+      "feature4_desc": "Softly ringing emotional sounds when time is up. We don't startle you, we gently notify. Vibration, sound, and screen all customizable.",
+      "specs_title": "Specifications",
+      "specs_platform": "Platform",
+      "specs_platform_value": "iOS, Android, Web (PWA)",
+      "specs_size": "Size",
+      "specs_size_value": "Approx. 8MB",
+      "specs_features": "Features",
+      "specs_features_value": "Pomodoro Timer, Stopwatch, Alarm, Statistics",
+      "specs_release": "Release",
+      "specs_release_value": "June 2025"
+    },
+    "dailymemo": {
+      "name": "Daily Memo",
+      "tagline": "The Simplest Way to Record Your Day",
+      "short_desc": "One page, one memo each day. A light daily record instead of a complex journal.",
+      "description": "Record your daily life with one memo a day",
+      "status": "Planning",
+      "hero_title": "The Simplest Way\nto Record Your Day",
+      "hero_subtitle": "When keeping a diary feels burdensome, but memory alone feels incomplete. Just one page a day, record your moments.",
+      "feature1_title": "One Page a Day",
+      "feature1_desc": "A fresh page waits for you every day. One line is fine, a long entry is fine too. Write freely, without pressure. What matters is the habit of daily recording.",
+      "feature2_title": "Start in 3 Seconds",
+      "feature2_desc": "App opens directly to today's memo screen. No loading, no ads, no unnecessary steps. Record immediately when a thought strikes.",
+      "feature3_title": "Emotional Retrospective",
+      "feature3_desc": "See past days at a glance in calendar view. Days with memos are color-coded, visually showing your recording patterns. Enjoy the pleasure of reminiscing through past memories.",
+      "feature4_title": "Perfect Privacy",
+      "feature4_desc": "All memos stored only on your device. No server transmission, no ads, no tracking. Cloud sync is optional and encrypted.",
+      "specs_title": "Specifications",
+      "specs_platform": "Platform",
+      "specs_platform_value": "iOS, Android",
+      "specs_size": "Size",
+      "specs_size_value": "Approx. 5MB",
+      "specs_features": "Features",
+      "specs_features_value": "Daily Memo, Calendar View, Search, Tags, Encryption",
+      "specs_release": "Release",
+      "specs_release_value": "August 2025"
+    },
+    "blockbreak": {
+      "name": "Block Break",
+      "tagline": "Classic Game with Pixel Style",
+      "short_desc": "Retro block breaker game. Charming pixel graphics meet addictive gameplay.",
+      "description": "Addictive puzzle game with retro vibes",
+      "status": "Planning",
+      "hero_title": "Classic Game\nwith Pixel Style",
+      "hero_subtitle": "80s arcade nostalgia meets modern design. Simple yet never easy, addictive gameplay.",
+      "feature1_title": "Handcrafted Pixel Art",
+      "feature1_desc": "Every graphic designed pixel by pixel. Dot graphics lovingly crafted for each block and ball give a retro yet refined feel.",
+      "feature2_title": "100 Stages",
+      "feature2_desc": "From tutorial to devilish difficulty. Beyond just breaking blocks, challenging stages requiring strategy and timing await. Each stage has unique patterns.",
+      "feature3_title": "Various Power-ups",
+      "feature3_desc": "Bomb blocks, laser blocks, multi-ball, wide paddle, and 20+ special blocks and items. Play the same stage with different strategies every time.",
+      "feature4_title": "8-bit Sound",
+      "feature4_desc": "Satisfying chiptune sounds with each block broken. Background music inspired by retro game music masters enhances immersion.",
+      "specs_title": "Game Info",
+      "specs_platform": "Platform",
+      "specs_platform_value": "iOS, Android",
+      "specs_size": "Size",
+      "specs_size_value": "Approx. 20MB",
+      "specs_features": "Game Modes",
+      "specs_features_value": "Story Mode, Arcade, Time Attack, Versus",
+      "specs_release": "Release",
+      "specs_release_value": "January 2026"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have any questions?",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "description": "Product inquiries, suggestions, or even just hellos are welcome. All messages are personally read and answered by the founder."
+  },
+  "footer": {
+    "company": "pixelab",
+    "description": "App & Game Development",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2025 pixelab. All rights reserved.",
+    "made_with": "Made with care in Seoul, Korea",
+    "slogan": "Every pixel has meaning"
+  },
+  "privacy_policy": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated",
+    "effective_date": "January 1, 2025",
+    "intro": "pixelab respects your privacy and is committed to protecting your personal information in accordance with applicable privacy laws. This Privacy Policy explains how we collect, use, and safeguard your information.",
+    "section1": {
+      "title": "1. Information We Collect and Use",
+      "content": "pixelab collects information for the following purposes. Information collected will not be used for purposes other than those listed below. If the purpose changes, we will obtain separate consent as required by law.\n\n1) Service Provision and Operation\n- App service delivery, content provision, personalized services\n- Identity verification, age verification, prevention of unauthorized use\n\n2) Member Management\n- Identity verification and personal identification for membership services\n- Prevention of fraudulent use and unauthorized access\n- Confirmation of registration intent, record keeping for dispute resolution\n\n3) Customer Support\n- Responding to customer inquiries and complaints\n- Delivering notices"
+    },
+    "section2": {
+      "title": "2. Data Retention Period",
+      "content": "① pixelab retains personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy or as required by law.\n\n② Specific retention periods:\n\n1) Service Usage Information\n- Retention period: Until account deletion\n- Legal basis: Terms of Service\n\n2) Legal Requirements\n- Contract or withdrawal records: 5 years (E-Commerce Act)\n- Payment and supply records: 5 years (E-Commerce Act)\n- Consumer complaint records: 3 years (E-Commerce Act)\n- Login records: 3 months (Communications Privacy Act)"
+    },
+    "section3": {
+      "title": "3. Your Rights and How to Exercise Them",
+      "content": "① You may exercise the following privacy rights with respect to pixelab at any time:\n\n1) Request access to personal information\n2) Request correction of errors\n3) Request deletion\n4) Request processing restriction\n\n② You may exercise these rights through written requests, phone, or email to pixelab, and we will respond without delay.\n\n③ When you request correction or deletion of personal information errors, pixelab will not use or provide the personal information until the correction or deletion is complete."
+    },
+    "section4": {
+      "title": "4. Data Deletion",
+      "content": "① pixelab deletes personal information without delay when it is no longer needed due to expiration of retention period or achievement of processing purpose.\n\n② Data deletion procedures and methods:\n\n1) Deletion Procedure\n- Unnecessary personal information is processed according to internal policy procedures under the supervision of the Privacy Officer.\n- Personal information is not used for purposes other than retention except as specified by law.\n\n2) Deletion Method\n- Electronic files: Complete deletion using technical methods that prevent recovery and reproduction\n- Physical records, printed materials, documents: Shredding or incineration"
+    },
+    "section5": {
+      "title": "5. Automatic Data Collection and Opt-Out",
+      "content": "pixelab uses 'cookies' that store and retrieve usage information to provide individualized services to users.\n\n① Purpose of Cookie Use\n- Analyze user access frequency and visit times\n- Identify user preferences and interests\n- Track event participation and visit counts\n\n② Cookie Settings and Opt-Out\n- You can configure cookies through web browser options (allow, block, etc.)\n- However, blocking cookies may limit personalized service features."
+    },
+    "contact": {
+      "title": "6. Privacy Officer",
+      "content": "① pixelab has designated a Privacy Officer who is responsible for personal information processing and handles user complaints and remedies related to personal information.\n\n▶ Privacy Officer\nName: pixelab Representative\nContact: Available through website contact form\n\n② For any inquiries, complaints, or remedies related to personal information protection while using pixelab services, please contact the Privacy Officer."
+    },
+    "changes": {
+      "title": "7. Privacy Policy Changes",
+      "content": "This Privacy Policy is effective from January 1, 2025. If additions, deletions, or modifications are made due to changes in laws, policies, or security technology, notice will be provided through the website at least 7 days before the changes take effect."
+    }
+  }
+}
