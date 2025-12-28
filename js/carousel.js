@@ -102,6 +102,8 @@ class ProductCarousel {
   }
 
   updateCarousel(animate = true) {
+    if (!this.track) return;
+
     if (!animate) {
       this.track.style.transition = 'none';
     } else {
@@ -113,7 +115,7 @@ class ProductCarousel {
       }, 500);
     }
 
-    // 캐러셀 이동
+    // 캐러셀 이동 - 각 카드가 정확히 100% 너비를 차지
     const offset = -this.currentIndex * 100;
     this.track.style.transform = `translateX(${offset}%)`;
 

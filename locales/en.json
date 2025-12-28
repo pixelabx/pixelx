@@ -9,7 +9,7 @@
   "hero": {
     "title": "pixelab",
     "subtitle": "Researching Every Pixel",
-    "description": "We develop simple and modern apps for everyday life,\nand create playful games with minimalist charm.",
+    "description": "We develop essential apps for everyday life simply, modernly,\nminimally, and powerfully.",
     "cta": "Explore Products",
     "scroll_hint": "Scroll down to learn more"
   },
@@ -18,33 +18,24 @@
     "subtitle": "About pixelab",
     "story": {
       "title": "Our Story",
-      "description": "pixelab was founded in 2024 with the philosophy that 'every pixel has meaning.' Just as individual pixels come together to create beautiful images on a digital screen, we research and create digital experiences that make small moments in users' daily lives more meaningful and special. Starting as a solo developer, we think about every pixel every day to create authentic products."
+      "description": "pixelab was founded in 2025 with the philosophy that 'every pixel has meaning.' Just as individual pixels come together to create beautiful images on a digital screen, we research and create digital experiences that make small moments in users' daily lives more meaningful and special."
     },
     "mission": {
       "title": "Our Mission",
-      "description": "Our goal is to simplify complexity and make boring moments enjoyable. While modern life becomes increasingly complex, we believe technology should make our lives easier. We pursue experiences that are true to their essence over flashy features, and intuitive usability over complex interfaces."
+      "description": "Our goal is to simplify complex daily life, make mundane moments enjoyable, and deliver essential features powerfully. While modern life becomes increasingly complex, we believe technology should make our lives easier."
     },
     "vision": {
       "title": "Our Vision",
-      "description": "Every pixel has meaning. We carefully consider every design element, from button border radius to spacing to color saturation. Our vision is to research and improve every detail of the user experience, creating products that anyone can use easily and joyfully, regardless of age or technical skill level."
+      "description": "Every pixel has meaning. Pixels are not only the smallest unit of digital images, but also the smallest unit of modules within an application. Through detailed consideration, our vision is to create applications that everyone can use easily and enjoyably."
     },
     "values": {
       "title": "Core Values",
       "simplicity": "Simplicity",
-      "simplicity_desc": "We find essence in complexity. We boldly remove unnecessary features and keep only what's truly needed.",
+      "simplicity_desc": "We boldly remove unnecessary features and keep only what is truly needed.",
       "modern": "Modern",
-      "modern_desc": "We research the latest design trends and technology, but pursue timeless beauty rather than following trends.",
-      "playful": "Playful",
-      "playful_desc": "We add fun to seriousness and emotion to practicality. We design meticulously so you feel small joys with each use."
-    },
-    "philosophy": {
-      "title": "Development Philosophy",
-      "point1": "User-Centered Design",
-      "point1_desc": "People, not technology, are at the center. We prioritize user experience over developer convenience.",
-      "point2": "Pixel-Perfect Craftsmanship",
-      "point2_desc": "Even a 1-pixel difference matters. We believe small details create big differences and pursue perfection.",
-      "point3": "Continuous Improvement",
-      "point3_desc": "Launch is not the end. We listen to user feedback, constantly research, and build better products every day."
+      "modern_desc": "We research the latest design trends and technology, pursuing beauty that transcends the ages.",
+      "playful": "Value Delivery",
+      "playful_desc": "We develop applications that are helpful to life and full of practical value."
     },
     "team": {
       "title": "Team",
