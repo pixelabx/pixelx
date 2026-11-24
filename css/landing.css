@@ -25,8 +25,8 @@ html {
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
+  font-family: 'Pretendard Variable', 'Pretendard', 'Inter', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
   overflow-x: hidden;
-  selection-background-color: rgba(59, 130, 246, 0.3);
 }
 
 ::selection {
