@@ -1,188 +1,104 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="pixelab 개인정보처리방침">
+  <meta name="description" content="pixelab(픽셀연구소) 개인정보처리방침">
   <title>개인정보처리방침 | pixelab</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    .privacy-container {
-      max-width: 900px;
-      margin: 100px auto 60px;
-      padding: 40px;
-      background: var(--white);
-    }
-
-    .privacy-header {
-      text-align: center;
-      margin-bottom: 60px;
-      padding-bottom: 30px;
-      border-bottom: 2px solid var(--secondary-color);
-    }
-
-    .privacy-title {
-      font-size: 48px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      letter-spacing: -1px;
-    }
-
-    .privacy-date {
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    .privacy-intro {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 60px;
-      padding: 24px;
-      background: var(--secondary-color);
-      border-radius: 12px;
-    }
-
-    .privacy-section {
-      margin-bottom: 48px;
-    }
-
-    .privacy-section h2 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: var(--text-primary);
-    }
-
-    .privacy-section p {
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-      white-space: pre-line;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 12px 24px;
-      background: var(--accent-color);
-      color: var(--white);
-      text-decoration: none;
-      border-radius: 8px;
-      transition: var(--transition);
-    }
-
-    .back-link:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%233B82F6'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%2352525B'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/landing.css">
 </head>
-<body>
-  <!-- 네비게이션 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">pixelab</div>
-      <ul class="nav-menu">
-        <li><a href="index.html#home" data-i18n="nav.home">홈</a></li>
-        <li><a href="index.html#about" data-i18n="nav.about">회사소개</a></li>
-        <li><a href="index.html#products" data-i18n="nav.products">제품소개</a></li>
-        <li><a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
-      </ul>
-      <!-- 언어 선택 -->
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ko">KO</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ja">JP</button>
-      </div>
+<body class="bg-[#0A0A0A] text-zinc-100 antialiased">
+  <!-- Sticky Header -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/[0.08]">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="inline-flex items-center gap-2.5">
+        <span class="grid grid-cols-2 gap-[3px] w-5 h-5" aria-hidden="true">
+          <span class="rounded-[2px] bg-white"></span>
+          <span class="rounded-[2px] bg-blue-500"></span>
+          <span class="rounded-[2px] bg-zinc-600"></span>
+          <span class="rounded-[2px] bg-white"></span>
+        </span>
+        <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
+      </a>
+      <a href="index.html" class="text-xs font-medium text-zinc-400 hover:text-white transition-colors">
+        ← 홈으로 돌아가기
+      </a>
     </div>
-  </nav>
+  </header>
 
-  <!-- 개인정보처리방침 콘텐츠 -->
-  <div class="privacy-container">
-    <div class="privacy-header">
-      <h1 class="privacy-title" data-i18n="privacy_policy.title">개인정보처리방침</h1>
-      <p class="privacy-date">
-        <span data-i18n="privacy_policy.last_updated">최종 수정일</span>: 2025-01-01
-      </p>
+  <main class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 pb-24">
+    <div class="pb-8 border-b border-white/[0.08] mb-10">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Legal</p>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">개인정보처리방침</h1>
+      <p class="text-xs text-zinc-500 mt-3 font-mono">최종 수정일: 2025-01-01</p>
     </div>
 
-    <div class="privacy-intro" data-i18n="privacy_policy.intro">
-      pixelab('픽셀연구소')는 개인정보 보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.
+    <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 text-sm text-zinc-300 leading-relaxed mb-10">
+      pixelab('픽셀연구소')는 개인정보 보호법 제30조에 따라 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
     </div>
 
-    <div class="privacy-section">
-      <h2 data-i18n="privacy_policy.section1.title">1. 개인정보의 처리 목적</h2>
-      <p data-i18n="privacy_policy.section1.content">
-        pixelab는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.
+    <div class="space-y-10 text-sm text-zinc-400 leading-relaxed">
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">1. 개인정보의 처리 목적</h2>
+        <p class="mb-3">pixelab는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-zinc-400">
+          <li>서비스 제공 및 운영: 앱 서비스 제공, 콘텐츠 제공, 맞춤 서비스 제공 및 부정이용 방지</li>
+          <li>회원 관리: 본인확인, 개인 식별, 불량회원의 부정 이용 방지 및 분쟁 조정을 위한 기록 보존</li>
+          <li>고객 지원: 고객 문의 대응, 불만처리 및 공지사항 전달</li>
+        </ul>
+      </section>
 
-- 서비스 제공 및 운영
-- 회원 관리
-- 고객 문의 대응
-      </p>
-    </div>
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">2. 개인정보의 처리 및 보유기간</h2>
+        <p class="mb-3">① pixelab는 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-zinc-400">
+          <li>서비스 이용 관련 정보: 회원 탈퇴 시까지</li>
+          <li>계약 또는 청약철회 등에 관한 기록: 5년 (전자상거래법)</li>
+          <li>대금결제 및 재화 등의 공급에 관한 기록: 5년 (전자상거래법)</li>
+          <li>소비자 불만 또는 분쟁처리에 관한 기록: 3년 (전자상거래법)</li>
+          <li>로그인 기록: 3개월 (통신비밀보호법)</li>
+        </ul>
+      </section>
 
-    <div class="privacy-section">
-      <h2 data-i18n="privacy_policy.section2.title">2. 개인정보의 처리 및 보유기간</h2>
-      <p data-i18n="privacy_policy.section2.content">
-        ① pixelab는 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">3. 정보주체의 권리·의무 및 행사방법</h2>
+        <p class="mb-3">이용자는 pixelab에 대해 언제든지 개인정보 열람 요구, 오류 정정 요구, 삭제 요구, 처리정지 요구 등의 권리를 행사할 수 있습니다. 권리 행사는 전자우편(<a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>)을 통해 하실 수 있으며, pixelab는 이에 대해 지체 없이 조치하겠습니다.</p>
+      </section>
 
-② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다:
-- 서비스 이용 정보: 회원 탈퇴 시까지
-- 법령에 따라 보존이 필요한 경우: 해당 법령에서 정한 기간
-      </p>
-    </div>
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">4. 개인정보의 파기</h2>
+        <p>pixelab는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다. 전자적 파일 형태의 정보는 복구 및 재생이 불가능한 기술적 방법을 사용하여 완전히 삭제합니다.</p>
+      </section>
 
-    <div class="privacy-section">
-      <h2 data-i18n="privacy_policy.section3.title">3. 정보주체의 권리·의무 및 행사방법</h2>
-      <p data-i18n="privacy_policy.section3.content">
-        이용자는 개인정보주체로서 다음과 같은 권리를 행사할 수 있습니다:
-
-- 개인정보 열람 요구
-- 오류 등이 있을 경우 정정 요구
-- 삭제 요구
-- 처리정지 요구
-      </p>
-    </div>
-
-    <div class="privacy-section">
-      <h2 data-i18n="privacy_policy.section4.title">4. 개인정보의 파기</h2>
-      <p data-i18n="privacy_policy.section4.content">
-        pixelab는 원칙적으로 개인정보 처리목적이 달성된 경우에는 지체없이 해당 개인정보를 파기합니다. 파기의 절차, 기한 및 방법은 다음과 같습니다:
-
-- 파기절차: 이용자가 입력한 정보는 목적 달성 후 별도의 DB에 옮겨져 내부 방침 및 기타 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다.
-- 파기기한: 이용자의 개인정보는 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5일 이내에 파기합니다.
-      </p>
-    </div>
-
-    <div class="privacy-section">
-      <h2 data-i18n="privacy_policy.contact.title">5. 개인정보 보호책임자</h2>
-      <p data-i18n="privacy_policy.contact.content">
-        pixelab는 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
-      </p>
-    </div>
-
-    <a href="index.html" class="back-link">← <span data-i18n="nav.home">홈으로 돌아가기</span></a>
-  </div>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
-          <p data-i18n="footer.description">앱 및 게임 개발</p>
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">5. 개인정보 보호책임자</h2>
+        <div class="rounded-xl border border-white/[0.08] bg-[#111113] p-5 space-y-1 text-zinc-300">
+          <p><span class="text-zinc-500">책임자:</span> pixelab 대표</p>
+          <p><span class="text-zinc-500">이메일:</span> <a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a></p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+      </section>
 
-  <!-- JavaScript -->
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
+      <section>
+        <h2 class="text-lg font-semibold text-white mb-3">6. 개인정보 처리방침의 변경</h2>
+        <p>이 개인정보 처리방침은 2025년 1월 1일부터 적용됩니다. 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는 변경사항의 시행 7일 전부터 웹사이트를 통해 공지할 것입니다.</p>
+      </section>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-white/[0.08]">
+      <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+        ← 홈으로 돌아가기
+      </a>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/[0.08] py-8 text-center text-xs text-zinc-600">
+    © 2026 pixelab. All rights reserved.
+  </footer>
 </body>
 </html>

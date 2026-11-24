@@ -1,230 +1,1140 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="pixelab - 심플하고 모던한 앱과 게임을 개발하는 픽셀연구소">
-  <title>pixelab | 픽셀연구소</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>pixelab | 픽셀연구소 — 일상의 작은 불편을 감각적인 앱으로</title>
+  <meta name="description" content="픽셀연구소(pixelab)는 일상의 작은 불편을 심플하고 모던한 모바일 앱으로 해결하는 인디 앱 스튜디오입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pixelabx.com/">
+  <meta property="og:title" content="pixelab | 픽셀연구소">
+  <meta property="og:description" content="하나하나의 픽셀을 연구하듯, 일상의 작은 불편을 감각적인 앱으로 해결합니다.">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- Minimal Pixel SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%233B82F6'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%2352525B'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3C/svg%3E">
+
+  <!-- Fonts: Pretendard & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+
+  <!-- Tailwind CSS (Zero-build CDN for GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            base: '#0A0A0A',
+            surface: '#111113',
+            elevated: '#161619',
+            electric: '#3B82F6',
+          },
+          fontFamily: {
+            sans: ['Pretendard Variable', 'Pretendard', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+          },
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Minimal Dark Design System -->
+  <link rel="stylesheet" href="css/landing.css">
 </head>
-<body>
-  <!-- 네비게이션 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo"><a href="index.html">pixelab</a></div>
-      <ul class="nav-menu">
-        <li><a href="#home" data-i18n="nav.home">홈</a></li>
-        <li><a href="#about" data-i18n="nav.about">회사소개</a></li>
-        <li><a href="#products" data-i18n="nav.products">제품소개</a></li>
-        <li><a href="privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
-      </ul>
-      <!-- 언어 선택 -->
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ko">KO</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ja">JP</button>
-      </div>
-    </div>
-  </nav>
+<body class="bg-[#0A0A0A] text-zinc-100 antialiased selection:bg-blue-500/30 selection:text-white">
 
-  <!-- 히어로 섹션 -->
-  <section id="home" class="hero-section">
-    <canvas id="pixel-wave-canvas" class="pixel-wave-background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
-    <div class="hero-content">
-      <h1 class="hero-title" data-i18n="hero.title">픽셀연구소</h1>
-      <p class="hero-subtitle" data-i18n="hero.subtitle">하나하나의 픽셀을 연구하듯</p>
-      <p class="hero-description" data-i18n-html="hero.description">일상생활에 꼭 필요한 앱을 심플하게, 모던하게,<br>단순하게, 파워풀하게 개발합니다.</p>
-      <a href="#products" class="hero-cta" data-i18n="hero.cta">제품 둘러보기</a>
-    </div>
-    <div class="scroll-indicator">
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
+  <!-- =========================================================
+       1. STICKY GNB (Header)
+  ========================================================== -->
+  <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 border-b border-transparent">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#home" class="inline-flex items-center gap-2.5 group focus:outline-none">
+        <span class="grid grid-cols-2 gap-[3px] w-5 h-5" aria-hidden="true">
+          <span class="rounded-[2px] bg-white transition-transform duration-300 group-hover:scale-90"></span>
+          <span class="rounded-[2px] bg-blue-500 transition-transform duration-300 group-hover:scale-110"></span>
+          <span class="rounded-[2px] bg-zinc-600 transition-transform duration-300 group-hover:scale-90"></span>
+          <span class="rounded-[2px] bg-white transition-transform duration-300 group-hover:scale-90"></span>
+        </span>
+        <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
+      </a>
 
-  <!-- 회사소개 섹션 -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="about.title">회사소개</h2>
-        <p class="section-subtitle" data-i18n="about.subtitle">pixelab에 대하여</p>
-      </div>
+      <!-- Desktop Anchor Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400" aria-label="주 메뉴">
+        <a href="#products" class="hover:text-white transition-colors">Products</a>
+        <a href="#showcase" class="hover:text-white transition-colors">Showcase</a>
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
 
-      <!-- 우리의 이야기 -->
-      <div class="story-section">
-        <div class="story-content">
-          <h3 data-i18n="about.story.title">우리의 이야기</h3>
-          <p data-i18n="about.story.description">
-            pixelab는 '모든 픽셀에는 의미가 있다'는 철학으로 시작했습니다.
-            화면 속 작은 픽셀 하나하나가 모여 의미 있는 경험을 만들듯이,
-            우리는 일상의 작은 순간들을 더 특별하게 만드는 앱과 게임을 개발합니다.
-          </p>
-        </div>
-      </div>
+      <!-- Desktop CTA + Mobile Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="#showcase"
+           class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-full transition-colors">
+          <span>앱 다운로드</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+          </svg>
+        </a>
 
-      <!-- 미션과 비전 -->
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="card-icon">🎯</div>
-          <h3 data-i18n="about.mission.title">우리의 미션</h3>
-          <p data-i18n="about.mission.description">
-            복잡한 일상을 심플하게, 지루한 순간을 즐겁게 만드는 것이 우리의 목표입니다. 기술은 복잡할 수 있지만, 사용자 경험은 단순해야 한다고 믿습니다.
-          </p>
-        </div>
-
-        <div class="about-card">
-          <div class="card-icon">🔍</div>
-          <h3 data-i18n="about.vision.title">우리의 비전</h3>
-          <p data-i18n="about.vision.description">
-            모든 픽셀에는 의미가 있습니다. 픽셀은 디지털 이미지의 최소단위이기도 하지만, 어플리케이션 내 모듈의 최소단위이기도 합니다. 디테일한 고민으로 모든 사람이 쉽고 즐겁게 사용할 수 있는 어플리케이션을 만드는 것이 우리의 비전입니다.
-          </p>
-        </div>
-      </div>
-
-      <!-- 핵심 가치 -->
-      <div class="values-section">
-        <h3 class="values-title" data-i18n="about.values.title">핵심 가치</h3>
-        <div class="values-grid">
-          <div class="value-item">
-            <div class="value-icon">✨</div>
-            <h4 data-i18n="about.values.simplicity">심플함</h4>
-            <p data-i18n="about.values.simplicity_desc">불필요한 기능은 과감히 제거하고, 정말 필요한 것만 남깁니다.</p>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">🚀</div>
-            <h4 data-i18n="about.values.modern">모던함</h4>
-            <p data-i18n="about.values.modern_desc">최신 디자인 트렌드와 기술을 연구하며, 시대를 관통하는 아름다움을 추구합니다.</p>
-          </div>
-          <div class="value-item">
-            <div class="value-icon">💎</div>
-            <h4 data-i18n="about.values.playful">가치전달</h4>
-            <p data-i18n="about.values.playful_desc">삶에 도움이 되는, 효용가치가 넘치는 어플리케이션을 개발합니다.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- 제품소개 섹션 (캐러셀) -->
-  <section id="products" class="products-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title" data-i18n="products.title">제품소개</h2>
-        <p class="section-subtitle" data-i18n="products.subtitle">일상을 더 풍요롭게</p>
-      </div>
-
-      <!-- 제품 캐러셀 -->
-      <div class="carousel-wrapper">
-        <button class="carousel-btn carousel-prev" aria-label="Previous">
-          <span>‹</span>
-        </button>
-
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <!-- 제품 1: MP3 Player -->
-            <div class="product-card" data-product="mp3player">
-              <div class="product-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                <div class="product-placeholder">🎵</div>
-              </div>
-              <div class="product-info">
-                <h3 data-i18n="products.mp3player.name">MP3 Player</h3>
-                <p class="product-tagline" data-i18n="products.mp3player.tagline">당신의 음악, 심플하게</p>
-                <p class="product-desc" data-i18n="products.mp3player.short_desc">
-                  불필요한 기능은 모두 제거하고 음악 감상에만 집중한 플레이어
-                </p>
-                <span class="product-status" data-i18n="products.mp3player.status">개발 중</span>
-                <a href="products/mp3player.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
-              </div>
-            </div>
-
-            <!-- 제품 2: Pixel Timer -->
-            <div class="product-card" data-product="pixeltimer">
-              <div class="product-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                <div class="product-placeholder">⏱️</div>
-              </div>
-              <div class="product-info">
-                <h3 data-i18n="products.pixeltimer.name">Pixel Timer</h3>
-                <p class="product-tagline" data-i18n="products.pixeltimer.tagline">시간을 픽셀로 표현하다</p>
-                <p class="product-desc" data-i18n="products.pixeltimer.short_desc">
-                  미니멀한 디자인의 타이머와 스톱워치
-                </p>
-                <span class="product-status" data-i18n="products.pixeltimer.status">기획 중</span>
-                <a href="products/pixeltimer.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
-              </div>
-            </div>
-
-            <!-- 제품 3: Daily Memo -->
-            <div class="product-card" data-product="dailymemo">
-              <div class="product-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                <div class="product-placeholder">📝</div>
-              </div>
-              <div class="product-info">
-                <h3 data-i18n="products.dailymemo.name">Daily Memo</h3>
-                <p class="product-tagline" data-i18n="products.dailymemo.tagline">하루를 기록하는 가장 간단한 방법</p>
-                <p class="product-desc" data-i18n="products.dailymemo.short_desc">
-                  매일의 생각을 빠르게 기록하는 심플한 메모 앱
-                </p>
-                <span class="product-status" data-i18n="products.dailymemo.status">기획 중</span>
-                <a href="products/dailymemo.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
-              </div>
-            </div>
-
-            <!-- 제품 4: Block Break -->
-            <div class="product-card" data-product="blockbreak">
-              <div class="product-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                <div class="product-placeholder">🎮</div>
-              </div>
-              <div class="product-info">
-                <h3 data-i18n="products.blockbreak.name">Block Break</h3>
-                <p class="product-tagline" data-i18n="products.blockbreak.tagline">픽셀로 즐기는 클래식 게임</p>
-                <p class="product-desc" data-i18n="products.blockbreak.short_desc">
-                  아기자기한 픽셀 그래픽의 블록 깨기 게임
-                </p>
-                <span class="product-status" data-i18n="products.blockbreak.status">기획 중</span>
-                <a href="products/blockbreak.html" class="product-link" data-i18n="products.view_details">자세히 보기</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <button class="carousel-btn carousel-next" aria-label="Next">
-          <span>›</span>
+        <button id="mobile-menu-btn"
+                type="button"
+                aria-label="메뉴 열기"
+                aria-expanded="false"
+                aria-controls="mobile-drawer"
+                class="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-lg border border-white/[0.1] bg-white/[0.03] text-zinc-300 hover:text-white hover:border-white/20 transition-colors">
+          <svg id="menu-icon-open" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 17h16" />
+          </svg>
+          <svg id="menu-icon-close" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
         </button>
       </div>
+    </div>
 
-      <!-- 캐러셀 인디케이터 -->
-      <div class="carousel-indicators">
-        <button class="indicator active" data-index="0"></button>
-        <button class="indicator" data-index="1"></button>
-        <button class="indicator" data-index="2"></button>
-        <button class="indicator" data-index="3"></button>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="mobile-drawer md:hidden bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/[0.08]">
+      <div class="px-6 py-5 flex flex-col gap-4 text-sm text-zinc-300">
+        <a href="#products" class="py-1 hover:text-white transition-colors">Products</a>
+        <a href="#showcase" class="py-1 hover:text-white transition-colors">Showcase</a>
+        <a href="#about" class="py-1 hover:text-white transition-colors">About</a>
+        <a href="#faq" class="py-1 hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" class="py-1 hover:text-white transition-colors">Contact</a>
+        <a href="#showcase" class="mt-2 inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+          앱 다운로드
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
-          <p data-i18n="footer.description">앱 및 게임 개발</p>
-          <p class="footer-tagline" data-i18n="footer.made_with">Made with passion</p>
-        </div>
-        <div class="footer-links">
-          <a href="privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+  <main>
+    <!-- =========================================================
+         2. HERO SECTION
+    ========================================================== -->
+    <section id="home" class="relative pt-28 pb-24 sm:pt-36 sm:pb-28 lg:pt-40 lg:pb-36 overflow-hidden">
+      <!-- Architectural Subtle Grid -->
+      <div class="hero-grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+
+          <!-- Left: Editorial Copy & CTAs -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.09] bg-white/[0.03] text-xs font-medium text-zinc-300 mb-7">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              <span>픽셀연구소 · Independent Mobile App Studio</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-white leading-[1.15] mb-6">
+              일상의 작은 불편을<br>
+              <span class="text-blue-500">감각적인 앱</span>으로 해결합니다.
+            </h1>
+
+            <p class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-9">
+              하나하나의 픽셀을 연구하듯, 불필요한 기능과 소음을 과감히 덜어냅니다.
+              픽셀연구소는 매일 손이 가는 심플하고 모던한 모바일 경험을 설계합니다.
+            </p>
+
+            <!-- Hero CTAs -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 mb-12">
+              <a href="#products"
+                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-all hover:-translate-y-0.5">
+                <span>대표 앱 보기</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </a>
+              <a href="#about"
+                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-zinc-200 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.1] hover:border-white/[0.2] rounded-xl transition-all">
+                <span>회사 소개</span>
+              </a>
+            </div>
+
+            <!-- Minimal Studio Proof Metrics -->
+            <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/[0.08]">
+              <div>
+                <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">4</div>
+                <div class="text-xs text-zinc-500 mt-0.5">Apps in Lab</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">iOS · AOS</div>
+                <div class="text-xs text-zinc-500 mt-0.5">Native Craft</div>
+              </div>
+              <div>
+                <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">0%</div>
+                <div class="text-xs text-zinc-500 mt-0.5">Ad Tracking</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Smartphone Mockup -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="ambient-blue-glow absolute -inset-12 rounded-full" aria-hidden="true"></div>
+
+            <div class="phone-frame relative z-10">
+              <div class="phone-screen flex flex-col justify-between px-5 pb-5">
+                <!-- Dynamic Island + Status Bar -->
+                <div>
+                  <div class="flex items-center justify-between pt-2.5 px-1 text-[11px] font-medium text-zinc-400">
+                    <span>9:41</span>
+                    <div class="phone-island !m-0"></div>
+                    <div class="flex items-center gap-1.5">
+                      <span class="w-3 h-2 rounded-[2px] border border-zinc-500 inline-block relative">
+                        <span class="absolute inset-[1.5px] bg-zinc-200 rounded-[1px]"></span>
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- PANEL 1: MP3 Player Interactive Preview -->
+                  <div data-hero-panel="mp3" class="mt-6">
+                    <div class="flex items-center justify-between mb-5">
+                      <span class="text-[11px] uppercase tracking-widest text-zinc-500 font-medium">Now Playing</span>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-blue-400 font-medium">HI-RES</span>
+                    </div>
+
+                    <!-- Minimal Geometric Album Cover -->
+                    <div class="relative aspect-square rounded-2xl bg-[#111114] border border-white/[0.08] p-5 flex flex-col justify-between overflow-hidden mb-5">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-mono text-zinc-500">PIXELAB AUDIO</span>
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                      </div>
+
+                      <!-- Animated Audio Equalizer -->
+                      <div id="hero-eq-wrap" class="flex items-end justify-center gap-1.5 h-20 my-2">
+                        <span class="eq-bar w-1.5 h-10 bg-zinc-700 rounded-full" style="animation-delay: 0.0s"></span>
+                        <span class="eq-bar w-1.5 h-16 bg-blue-500/70 rounded-full" style="animation-delay: 0.15s"></span>
+                        <span class="eq-bar w-1.5 h-20 bg-blue-500 rounded-full" style="animation-delay: 0.3s"></span>
+                        <span class="eq-bar w-1.5 h-14 bg-white rounded-full" style="animation-delay: 0.45s"></span>
+                        <span class="eq-bar w-1.5 h-18 bg-blue-500 rounded-full" style="animation-delay: 0.2s"></span>
+                        <span class="eq-bar w-1.5 h-12 bg-blue-500/60 rounded-full" style="animation-delay: 0.35s"></span>
+                        <span class="eq-bar w-1.5 h-9 bg-zinc-700 rounded-full" style="animation-delay: 0.1s"></span>
+                      </div>
+
+                      <div class="flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                        <span>48kHz / 24bit</span>
+                        <span>STEREO</span>
+                      </div>
+                    </div>
+
+                    <!-- Track Info -->
+                    <div class="mb-4">
+                      <div id="hero-track-title" class="text-base font-semibold text-white tracking-tight">Midnight Grid</div>
+                      <div id="hero-track-artist" class="text-xs text-zinc-400 mt-0.5">Seoul Ambient · FLAC 24-bit</div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-5">
+                      <div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+                        <div id="hero-track-progress" class="h-full bg-blue-500 rounded-full transition-all duration-300" style="width: 40%"></div>
+                      </div>
+                      <div class="flex justify-between text-[10px] font-mono text-zinc-500 mt-1.5">
+                        <span id="hero-track-current">01:28</span>
+                        <span id="hero-track-duration">03:42</span>
+                      </div>
+                    </div>
+
+                    <!-- Interactive Playback Controls -->
+                    <div class="flex items-center justify-center gap-6">
+                      <button id="hero-prev-btn" type="button" aria-label="이전 곡" class="p-2 text-zinc-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+                        </svg>
+                      </button>
+                      <button id="hero-play-btn" type="button" aria-label="일시정지" class="w-12 h-12 rounded-full bg-white text-black hover:bg-zinc-200 flex items-center justify-center transition-transform active:scale-95">
+                        <svg id="hero-icon-pause" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+                        </svg>
+                        <svg id="hero-icon-play" class="w-5 h-5 hidden translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </button>
+                      <button id="hero-next-btn" type="button" aria-label="다음 곡" class="p-2 text-zinc-400 hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- PANEL 2: Pixel Timer Interactive Preview -->
+                  <div data-hero-panel="timer" class="mt-6 hidden">
+                    <div class="flex items-center justify-between mb-5">
+                      <span class="text-[11px] uppercase tracking-widest text-zinc-500 font-medium">Deep Focus</span>
+                      <span class="text-[10px] px-2 py-0.5 rounded-full border border-white/10 bg-white/[0.04] text-zinc-300 font-mono">25:00</span>
+                    </div>
+
+                    <div class="rounded-2xl bg-[#111114] border border-white/[0.08] p-5 mb-5">
+                      <!-- 5x5 Pixel Progress Matrix -->
+                      <div class="grid grid-cols-5 gap-2.5 max-w-[180px] mx-auto my-4">
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                        <span class="aspect-square rounded-[4px] bg-blue-400 pixel-pulse"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800/60"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800/60"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800/60"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800/60"></span>
+                        <span class="aspect-square rounded-[4px] bg-zinc-800/60"></span>
+                      </div>
+                    </div>
+
+                    <div class="text-center mb-5">
+                      <div class="text-4xl font-semibold font-mono tracking-tight text-white">12:40</div>
+                      <div class="text-xs text-zinc-400 mt-1">Session 2 of 4 · Pixel Matrix</div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-center">
+                        <div class="text-[10px] text-zinc-500">오늘 집중</div>
+                        <div class="text-sm font-semibold text-white mt-0.5">1h 45m</div>
+                      </div>
+                      <div class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-center">
+                        <div class="text-[10px] text-zinc-500">연속 기록</div>
+                        <div class="text-sm font-semibold text-blue-400 mt-0.5">14 Days</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Mockup Bottom App Switcher -->
+                <div class="mt-6 pt-3 border-t border-white/[0.06] flex items-center justify-center gap-1.5">
+                  <button type="button" data-hero-tab="mp3" class="px-3 py-1.5 rounded-lg text-[11px] font-medium bg-white/10 text-white transition-colors">
+                    MP3 Player
+                  </button>
+                  <button type="button" data-hero-tab="timer" class="px-3 py-1.5 rounded-lg text-[11px] font-medium text-zinc-500 hover:text-zinc-300 transition-colors">
+                    Pixel Timer
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
+    </section>
+
+    <!-- =========================================================
+         3. 대표 앱 소개 — BENTO GRID
+    ========================================================== -->
+    <section id="products" class="py-24 sm:py-32 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- Section Header -->
+        <div class="max-w-2xl mb-14 reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Products</p>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+            꼭 필요한 기능만 정교하게 다듬은 앱
+          </h2>
+          <p class="text-zinc-400 text-base leading-relaxed">
+            화려한 장식 대신 오래 써도 질리지 않는 미니멀한 인터페이스와 빠른 반응 속도에 집중합니다.
+          </p>
+        </div>
+
+        <!-- Bento Grid (12-column asymmetric layout) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-5">
+
+          <!-- Bento 1: MP3 Player (Featured Large, 7 cols) -->
+          <article class="bento-card reveal md:col-span-7 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[340px]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/25">개발 중</span>
+                  <span class="text-xs text-zinc-500">iOS · Android</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white tracking-tight">MP3 Player</h3>
+                <p class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
+                  광고와 알고리즘 추천을 모두 덜어내고 음악 감상의 본질만 남겼습니다.
+                  FLAC·ALAC 무손실 음원과 한 손 제스처 컨트롤을 지원하는 미니멀 플레이어입니다.
+                </p>
+              </div>
+              <a href="products/mp3player.html" aria-label="MP3 Player 자세히 보기"
+                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Inline Visual Preview: Minimal Waveform Bar -->
+            <div class="mt-8 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-medium text-white">Lossless Audio Engine</div>
+                  <div class="text-[11px] text-zinc-500 font-mono">FLAC · ALAC · WAV · 15MB</div>
+                </div>
+              </div>
+              <div class="hidden sm:flex items-end gap-1 h-7">
+                <span class="w-1 h-3 bg-zinc-700 rounded-full"></span>
+                <span class="w-1 h-5 bg-blue-500/70 rounded-full"></span>
+                <span class="w-1 h-7 bg-blue-500 rounded-full"></span>
+                <span class="w-1 h-4 bg-zinc-400 rounded-full"></span>
+                <span class="w-1 h-6 bg-blue-500 rounded-full"></span>
+                <span class="w-1 h-3 bg-zinc-700 rounded-full"></span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 2: Pixel Timer (5 cols) -->
+          <article class="bento-card reveal reveal-delay-1 md:col-span-5 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[340px]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">프로토타입</span>
+                  <span class="text-xs text-zinc-500">iOS · Android · Web</span>
+                </div>
+                <h3 class="text-2xl font-bold text-white tracking-tight">Pixel Timer</h3>
+                <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                  흐르는 집중 시간을 픽셀 매트릭스로 시각화하는 포모도로 타이머. 초침 대신 고요히 채워지는 픽셀로 몰입을 돕습니다.
+                </p>
+              </div>
+              <a href="products/pixeltimer.html" aria-label="Pixel Timer 자세히 보기"
+                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Mini Pixel Matrix Graphic -->
+            <div class="mt-8 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between">
+              <div class="grid grid-cols-6 gap-1.5" aria-hidden="true">
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-400 pixel-pulse"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
+                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
+              </div>
+              <div class="text-right">
+                <div class="text-lg font-mono font-semibold text-white">25:00</div>
+                <div class="text-[11px] text-zinc-500">Pomodoro Rhythm</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 3: Daily Memo (5 cols) -->
+          <article class="bento-card reveal md:col-span-5 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[300px]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중</span>
+                  <span class="text-xs text-zinc-500">iOS · Android</span>
+                </div>
+                <h3 class="text-xl font-bold text-white tracking-tight">Daily Memo</h3>
+                <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                  앱을 열면 3초 만에 오늘의 페이지가 열립니다. 서버 전송 없는 100% 로컬 퍼스트 일상 기록 앱.
+                </p>
+              </div>
+              <a href="products/dailymemo.html" aria-label="Daily Memo 자세히 보기"
+                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </a>
+            </div>
+
+            <div class="mt-7 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4">
+              <div class="flex items-center justify-between text-[11px] text-zinc-500 font-mono mb-2">
+                <span>TODAY · NOV 24</span>
+                <span class="text-blue-400">LOCAL ONLY</span>
+              </div>
+              <p class="text-xs text-zinc-300 leading-relaxed">
+                “복잡한 기능 대신, 매일 한 줄씩 가볍게 남기는 습관.”
+              </p>
+            </div>
+          </article>
+
+          <!-- Bento 4: Block Break (7 cols) -->
+          <article class="bento-card reveal reveal-delay-1 md:col-span-7 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[300px]">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중 · 게임</span>
+                  <span class="text-xs text-zinc-500">iOS · Android</span>
+                </div>
+                <h3 class="text-xl font-bold text-white tracking-tight">Block Break</h3>
+                <p class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
+                  한 픽셀씩 정성스럽게 제작한 도트 아트와 8-bit 칩튠 사운드로 재해석한 클래식 아케이드 블록 깨기.
+                </p>
+              </div>
+              <a href="products/blockbreak.html" aria-label="Block Break 자세히 보기"
+                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Minimalist Brick Preview -->
+            <div class="mt-7 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between gap-6">
+              <div class="flex-1 space-y-1.5" aria-hidden="true">
+                <div class="grid grid-cols-8 gap-1.5">
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-700"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-700"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
+                </div>
+                <div class="grid grid-cols-8 gap-1.5">
+                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500/60"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
+                  <span class="h-2 rounded-[2px] bg-blue-500/60"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
+                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
+                </div>
+              </div>
+              <div class="text-right shrink-0">
+                <div class="text-xs font-semibold text-white">100 Stages</div>
+                <div class="text-[11px] text-zinc-500 font-mono">60fps · Offline</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento 5~7: Studio Technical Strengths (4 cols each) -->
+          <div class="bento-card reveal md:col-span-4 rounded-2xl p-6">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white">초경량 네이티브 성능</h3>
+            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+              평균 15MB 미만의 가벼운 용량과 즉각적인 실행 속도로, 기기 배터리를 낭비하지 않습니다.
+            </p>
+          </div>
+
+          <div class="bento-card reveal reveal-delay-1 md:col-span-4 rounded-2xl p-6">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white">프라이버시 퍼스트</h3>
+            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+              불필요한 회원가입이나 광고 추적 코드를 배제하고, 사용자의 데이터를 기기 안에 안전하게 지킵니다.
+            </p>
+          </div>
+
+          <div class="bento-card reveal reveal-delay-2 md:col-span-4 rounded-2xl p-6">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09z" />
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white">절제된 60fps 인터랙션</h3>
+            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+              손끝의 제스처와 햅틱 피드백까지 세밀하게 조율해, 설명서 없이도 자연스럽게 익숙해집니다.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         4. 앱 상세 쇼케이스 — INTERACTIVE CAROUSEL
+    ========================================================== -->
+    <section id="showcase" class="py-24 sm:py-32 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <!-- Header & App Selector Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">App Showcase</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+              스크린으로 미리 보는 픽셀연구소
+            </h2>
+          </div>
+
+          <!-- Quick App Pills -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button type="button" data-showcase-pill="0" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-blue-500/60 bg-blue-500/10 text-white transition-colors">MP3 Player</button>
+            <button type="button" data-showcase-pill="1" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">Pixel Timer</button>
+            <button type="button" data-showcase-pill="2" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">Daily Memo</button>
+            <button type="button" data-showcase-pill="3" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">Block Break</button>
+          </div>
+        </div>
+
+        <!-- Split Showcase Container -->
+        <div class="reveal rounded-3xl border border-white/[0.08] bg-[#111113] p-6 sm:p-10 lg:p-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+            <!-- Left Column: Active App Details & Store Badges -->
+            <div class="lg:col-span-5 flex flex-col justify-between order-2 lg:order-1">
+              <div>
+                <div class="flex items-center justify-between mb-5">
+                  <span id="showcase-status" class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-500/15 text-blue-400 border border-blue-500/25">
+                    개발 중 · 2026 출시 예정
+                  </span>
+                  <span id="showcase-index" class="text-xs font-mono text-zinc-500">01 / 04</span>
+                </div>
+
+                <h3 id="showcase-name" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">MP3 Player</h3>
+                <p id="showcase-tagline" class="text-sm font-medium text-blue-400 mt-1.5">당신의 음악, 오직 본질만 남겼습니다.</p>
+                <p id="showcase-desc" class="text-sm text-zinc-400 leading-relaxed mt-4">
+                  복잡한 추천 피드와 광고를 모두 덜어내고 음악 감상에만 집중한 미니멀 오디오 플레이어입니다.
+                </p>
+
+                <!-- Platform Chips -->
+                <div id="showcase-platforms" class="flex flex-wrap gap-2 mt-5"></div>
+
+                <!-- Key Specs Table -->
+                <div id="showcase-specs" class="mt-6 pt-2 border-t border-white/[0.06]"></div>
+              </div>
+
+              <!-- Store Download Badges + Detail Link -->
+              <div class="mt-8 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <!-- App Store Badge -->
+                  <button type="button" data-store-badge="App Store"
+                          class="flex items-center justify-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] hover:border-white/25 transition-all text-left">
+                    <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.68-.83 1.14-1.98 1.01-3.13-.98.04-2.17.65-2.87 1.48-.62.72-1.17 1.89-1.02 3.01 1.1.08 2.2-.53 2.88-1.36z"/>
+                    </svg>
+                    <div class="leading-tight">
+                      <div class="text-[9px] text-zinc-400">Download on the</div>
+                      <div class="text-xs font-semibold text-white">App Store</div>
+                    </div>
+                  </button>
+
+                  <!-- Google Play Badge -->
+                  <button type="button" data-store-badge="Google Play"
+                          class="flex items-center justify-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/[0.1] hover:border-white/25 transition-all text-left">
+                    <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/>
+                    </svg>
+                    <div class="leading-tight">
+                      <div class="text-[9px] text-zinc-400">GET IT ON</div>
+                      <div class="text-xs font-semibold text-white">Google Play</div>
+                    </div>
+                  </button>
+                </div>
+
+                <a id="showcase-detail-link" href="products/mp3player.html"
+                   class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-blue-400 transition-colors">
+                  <span>제품 상세 스펙 보기</span>
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Carousel Viewport with Crisp App Screens -->
+            <div class="lg:col-span-7 order-1 lg:order-2">
+              <div id="showcase-viewport" class="relative overflow-hidden rounded-2xl border border-white/[0.07] bg-[#09090B] py-8 px-4 sm:py-10">
+                <div id="showcase-track" class="showcase-track">
+
+                  <!-- Slide 1: MP3 Player Screen -->
+                  <div class="showcase-slide flex justify-center px-2">
+                    <div class="w-[265px] rounded-[34px] p-2.5 bg-[#18181B] border border-white/[0.12]">
+                      <div class="rounded-[26px] bg-[#0B0B0D] border border-white/[0.06] p-4 min-h-[430px] flex flex-col justify-between">
+                        <div>
+                          <div class="flex items-center justify-between text-[10px] text-zinc-500 mb-4">
+                            <span class="font-mono">LIBRARY</span>
+                            <span class="px-1.5 py-0.5 rounded bg-blue-500/15 text-blue-400 font-mono">FLAC</span>
+                          </div>
+                          <div class="rounded-xl bg-[#131317] border border-white/[0.07] p-4 mb-4">
+                            <div class="text-[10px] font-mono text-blue-400 mb-1">TRACK 04</div>
+                            <div class="text-sm font-semibold text-white">Nocturne in Blue</div>
+                            <div class="text-[11px] text-zinc-500 mt-0.5">Studio Master · 24-bit</div>
+                            <div class="mt-4 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                              <div class="w-3/5 h-full bg-blue-500 rounded-full"></div>
+                            </div>
+                          </div>
+                          <div class="space-y-2">
+                            <div class="flex items-center justify-between px-3 py-2 rounded-lg bg-blue-500/10 border border-blue-500/25">
+                              <span class="text-xs text-white font-medium">01. Midnight Grid</span>
+                              <span class="text-[10px] font-mono text-blue-400">03:42</span>
+                            </div>
+                            <div class="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                              <span class="text-xs text-zinc-400">02. Quiet Pixel Rain</span>
+                              <span class="text-[10px] font-mono text-zinc-500">04:15</span>
+                            </div>
+                            <div class="flex items-center justify-between px-3 py-2 rounded-lg bg-white/[0.02] border border-white/[0.05]">
+                              <span class="text-xs text-zinc-400">03. Analog Horizon</span>
+                              <span class="text-[10px] font-mono text-zinc-500">03:18</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] text-zinc-500">
+                          <span>Swipe to Skip</span>
+                          <span class="text-white font-medium">Tap to Play</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 2: Pixel Timer Screen -->
+                  <div class="showcase-slide flex justify-center px-2">
+                    <div class="w-[265px] rounded-[34px] p-2.5 bg-[#18181B] border border-white/[0.12]">
+                      <div class="rounded-[26px] bg-[#0B0B0D] border border-white/[0.06] p-4 min-h-[430px] flex flex-col justify-between">
+                        <div>
+                          <div class="flex items-center justify-between text-[10px] text-zinc-500 mb-5">
+                            <span class="font-mono">PIXEL TIMER</span>
+                            <span class="text-blue-400">FOCUS MODE</span>
+                          </div>
+                          <div class="rounded-xl bg-[#131317] border border-white/[0.07] p-5 mb-5">
+                            <div class="grid grid-cols-6 gap-2 max-w-[168px] mx-auto">
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                              <span class="aspect-square rounded-[3px] bg-blue-400 pixel-pulse"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                              <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                            </div>
+                          </div>
+                          <div class="text-center">
+                            <div class="text-3xl font-mono font-bold text-white tracking-tight">14:22</div>
+                            <div class="text-[11px] text-zinc-500 mt-1">60% Completed · Quiet Theme</div>
+                          </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 pt-3 border-t border-white/[0.06]">
+                          <div class="py-2 rounded-lg bg-blue-500 text-center text-xs font-semibold text-white">Pause</div>
+                          <div class="py-2 rounded-lg bg-white/[0.05] text-center text-xs font-medium text-zinc-300">Reset</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3: Daily Memo Screen -->
+                  <div class="showcase-slide flex justify-center px-2">
+                    <div class="w-[265px] rounded-[34px] p-2.5 bg-[#18181B] border border-white/[0.12]">
+                      <div class="rounded-[26px] bg-[#0B0B0D] border border-white/[0.06] p-4 min-h-[430px] flex flex-col justify-between">
+                        <div>
+                          <div class="flex items-center justify-between text-[10px] text-zinc-500 mb-4">
+                            <span class="font-mono">2026.11.24</span>
+                            <span class="text-emerald-400 font-mono">● SAVED</span>
+                          </div>
+                          <div class="text-base font-semibold text-white mb-3">오늘의 한 줄 기록</div>
+                          <div class="rounded-xl bg-[#131317] border border-white/[0.07] p-3.5 text-xs text-zinc-300 leading-relaxed space-y-2.5 mb-4">
+                            <p>새 랜딩페이지 디자인 완성. 여백이 넉넉해지니 오히려 메시지가 더 선명해졌다.</p>
+                            <p class="text-zinc-500">#design #pixelab #daily</p>
+                          </div>
+                          <!-- Mini Contribution / Habit Calendar -->
+                          <div class="text-[10px] text-zinc-500 mb-2 font-mono">NOVEMBER STREAK</div>
+                          <div class="grid grid-cols-7 gap-1.5">
+                            <span class="aspect-square rounded-[3px] bg-blue-500/80"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500/60"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500/40"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500/80"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-zinc-800"></span>
+                            <span class="aspect-square rounded-[3px] bg-blue-500"></span>
+                            <span class="aspect-square rounded-[3px] bg-white"></span>
+                          </div>
+                        </div>
+                        <div class="pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] text-zinc-500">
+                          <span>On-Device Encrypted</span>
+                          <span class="text-zinc-300">5MB</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 4: Block Break Screen -->
+                  <div class="showcase-slide flex justify-center px-2">
+                    <div class="w-[265px] rounded-[34px] p-2.5 bg-[#18181B] border border-white/[0.12]">
+                      <div class="rounded-[26px] bg-[#0B0B0D] border border-white/[0.06] p-4 min-h-[430px] flex flex-col justify-between">
+                        <div>
+                          <div class="flex items-center justify-between text-[10px] font-mono text-zinc-400 mb-4">
+                            <span>STAGE 12</span>
+                            <span class="text-blue-400">SCORE 04,820</span>
+                          </div>
+                          <!-- Pixel Brick Field -->
+                          <div class="rounded-xl bg-[#111114] border border-white/[0.07] p-3.5 h-[285px] flex flex-col justify-between">
+                            <div class="space-y-1.5">
+                              <div class="grid grid-cols-6 gap-1.5">
+                                <span class="h-3 rounded-[2px] bg-blue-500"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-400"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-400"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500"></span>
+                              </div>
+                              <div class="grid grid-cols-6 gap-1.5">
+                                <span class="h-3 rounded-[2px] bg-zinc-600"></span>
+                                <span class="h-3 rounded-[2px] bg-transparent"></span>
+                                <span class="h-3 rounded-[2px] bg-zinc-500"></span>
+                                <span class="h-3 rounded-[2px] bg-zinc-500"></span>
+                                <span class="h-3 rounded-[2px] bg-transparent"></span>
+                                <span class="h-3 rounded-[2px] bg-zinc-600"></span>
+                              </div>
+                              <div class="grid grid-cols-6 gap-1.5">
+                                <span class="h-3 rounded-[2px] bg-blue-500/50"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500/50"></span>
+                                <span class="h-3 rounded-[2px] bg-transparent"></span>
+                                <span class="h-3 rounded-[2px] bg-transparent"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500/50"></span>
+                                <span class="h-3 rounded-[2px] bg-blue-500/50"></span>
+                              </div>
+                            </div>
+
+                            <!-- Ball + Paddle -->
+                            <div class="flex flex-col items-center gap-6 pb-1">
+                              <span class="w-2.5 h-2.5 rounded-full bg-white translate-x-6"></span>
+                              <span class="w-16 h-2 rounded-full bg-blue-500"></span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="pt-3 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                          <span>♥♥♥</span>
+                          <span>8-BIT AUDIO ON</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Carousel Controls & Indicators -->
+              <div class="mt-5 flex items-center justify-between">
+                <div class="flex items-center gap-2" role="tablist" aria-label="앱 쇼케이스 슬라이드">
+                  <button type="button" data-showcase-dot="0" aria-label="MP3 Player 보기" class="h-2 w-7 rounded-full bg-blue-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="1" aria-label="Pixel Timer 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="2" aria-label="Daily Memo 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="3" aria-label="Block Break 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                </div>
+
+                <div class="flex items-center gap-2">
+                  <button id="showcase-prev" type="button" aria-label="이전 앱"
+                          class="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 flex items-center justify-center text-zinc-300 hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  <button id="showcase-next" type="button" aria-label="다음 앱"
+                          class="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 flex items-center justify-center text-zinc-300 hover:text-white transition-colors">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         5. ABOUT / STUDIO PHILOSOPHY
+    ========================================================== -->
+    <section id="about" class="py-24 sm:py-32 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">About pixelab</p>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-snug">
+              모든 픽셀에는<br>의미가 있습니다.
+            </h2>
+            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mt-5">
+              픽셀연구소(pixelab)는 디지털 화면의 최소 단위인 픽셀처럼, 앱을 이루는 가장 작은 인터랙션 하나까지 집요하게 고민하는 인디 스튜디오입니다.
+              기술은 정교하게, 사용자 경험은 단순하게 만드는 것이 우리의 기준입니다.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 divide-y divide-white/[0.08] border-y border-white/[0.08] reveal reveal-delay-1">
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div class="sm:col-span-4 text-sm font-semibold text-white">01 · 본질에 집중</div>
+              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                기능을 계속 덧붙이기보다, 사용자의 흐름을 방해하는 요소를 하나씩 걷어냅니다. 정말 필요한 기능만 직관적인 자리에 남깁니다.
+              </p>
+            </div>
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div class="sm:col-span-4 text-sm font-semibold text-white">02 · 모던한 완성도</div>
+              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                유행에 휩쓸리지 않는 타이포그래피와 여백의 균형, 그리고 플랫폼 네이티브 감각을 존중하는 디자인 시스템을 유지합니다.
+              </p>
+            </div>
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div class="sm:col-span-4 text-sm font-semibold text-white">03 · 지속 가능한 가치</div>
+              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                단발성 호기심에 그치지 않고, 매일의 루틴 속에서 조용히 효용을 만들어내는 도구를 꾸준히 업데이트합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         6. 자주 묻는 질문 — FAQ ACCORDION
+    ========================================================== -->
+    <section id="faq" class="py-24 sm:py-32 border-t border-white/[0.06]">
+      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+        <div class="text-center mb-14 reveal">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">FAQ</p>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">자주 묻는 질문</h2>
+          <p class="text-sm sm:text-base text-zinc-400 mt-3">
+            앱 지원, 협업 및 파트너십, 채용에 대해 궁금한 점을 정리했습니다.
+          </p>
+        </div>
+
+        <div class="space-y-3 reveal reveal-delay-1">
+          <!-- FAQ 1 -->
+          <div class="accordion-item is-open rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="true">
+              <span class="text-sm sm:text-base font-medium text-white">앱들은 언제 출시되며 어떤 기기에서 사용할 수 있나요?</span>
+              <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  현재 대표 제품인 MP3 Player를 중심으로 순차 출시를 준비 중이며, iOS와 Android를 모두 지원합니다.
+                  출시 알림이나 베타 테스트(TestFlight) 참여를 원하시면 <a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>으로 편하게 연락해 주세요.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
+              <span class="text-sm sm:text-base font-medium text-white">앱 사용 중 오류 제보나 기능 제안은 어떻게 하나요?</span>
+              <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  이메일(<a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>)로 사용 중인 기기 모델과 상황을 알려주시면 개발자가 직접 확인하고 영업일 기준 2일 이내에 답변드립니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
+              <span class="text-sm sm:text-base font-medium text-white">기업 협업, 프로덕트 파트너십 또는 외주 문의도 가능한가요?</span>
+              <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  네, 픽셀연구소의 디자인 철학과 방향성이 맞는 브랜드 협업, 모바일 MVP 설계 및 공동 개발 제안은 언제든 열려 있습니다.
+                  간단한 프로젝트 개요와 일정을 메일로 보내주시면 빠르게 검토해 회신드리겠습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
+              <span class="text-sm sm:text-base font-medium text-white">사용자 개인정보와 앱 내 데이터는 안전하게 보호되나요?</span>
+              <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  픽셀연구소는 '로컬 퍼스트' 원칙을 따릅니다. 필수적인 경우를 제외하고 서버로 데이터를 전송하지 않으며 제3자 광고 추적 도구를 탑재하지 않습니다.
+                  자세한 내용은 <a href="privacy.html" class="text-blue-400 hover:underline">개인정보처리방침</a>에서 확인하실 수 있습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
+            <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
+              <span class="text-sm sm:text-base font-medium text-white">채용이나 스튜디오 합류 기회는 어떻게 확인하나요?</span>
+              <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div>
+                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                  현재 소수 정예 인디 스튜디오 형태로 운영 중이며, iOS/Android 엔지니어 및 프로덕트 디자이너와의 프로젝트 단위 협업이나 상시 커피챗은 언제든 환영합니다.
+                  포트폴리오나 GitHub 링크와 함께 메일로 인사해 주세요.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         7. CONTACT CTA SECTION
+    ========================================================== -->
+    <section id="contact" class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-4xl mx-auto px-5 sm:px-8 reveal">
+        <div class="rounded-3xl border border-white/[0.09] bg-[#111113] p-8 sm:p-14 text-center relative overflow-hidden">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Contact</p>
+          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white">
+            함께 만들고 싶은 아이디어가 있으신가요?
+          </h2>
+          <p class="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto mt-4 leading-relaxed">
+            제품 피드백, 협업 제안, 베타 테스트 문의 등 어떤 이야기든 환영합니다.
+            보내주신 모든 메시지는 픽셀연구소 팀이 직접 읽고 답변합니다.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="mailto:hello@pixelabx.com?subject=%5Bpixelab%20문의%5D%20"
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              <span>이메일로 문의하기</span>
+            </a>
+
+            <button type="button" data-copy-email
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-zinc-200 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-white/20 rounded-xl transition-colors">
+              <span class="font-mono text-xs sm:text-sm">hello@pixelabx.com</span>
+              <svg class="w-4 h-4 text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       8. FOOTER (Minimal Dark)
+  ========================================================== -->
+  <footer class="bg-[#060607] border-t border-white/[0.08] py-14">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/[0.06]">
+        <!-- Brand & Business Info -->
+        <div class="md:col-span-6 space-y-3">
+          <a href="#home" class="inline-flex items-center gap-2.5">
+            <span class="grid grid-cols-2 gap-[3px] w-4 h-4" aria-hidden="true">
+              <span class="rounded-[1.5px] bg-white"></span>
+              <span class="rounded-[1.5px] bg-blue-500"></span>
+              <span class="rounded-[1.5px] bg-zinc-600"></span>
+              <span class="rounded-[1.5px] bg-white"></span>
+            </span>
+            <span class="text-base font-semibold tracking-tight text-white">pixelab</span>
+          </a>
+          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+            픽셀연구소 (pixelab) · 모바일 애플리케이션 및 디지털 프로덕트 개발 스튜디오
+          </p>
+          <div class="text-xs text-zinc-500 space-y-1 pt-1">
+            <p>소재지: 서울특별시 (Seoul, Republic of Korea)</p>
+            <p>문의: <a href="mailto:hello@pixelabx.com" class="text-zinc-400 hover:text-white transition-colors">hello@pixelabx.com</a></p>
+          </div>
+        </div>
+
+        <!-- Product Links -->
+        <div class="md:col-span-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-3.5">Products</h3>
+          <ul class="space-y-2.5 text-xs text-zinc-500">
+            <li><a href="products/mp3player.html" class="hover:text-white transition-colors">MP3 Player</a></li>
+            <li><a href="products/pixeltimer.html" class="hover:text-white transition-colors">Pixel Timer</a></li>
+            <li><a href="products/dailymemo.html" class="hover:text-white transition-colors">Daily Memo</a></li>
+            <li><a href="products/blockbreak.html" class="hover:text-white transition-colors">Block Break</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Social -->
+        <div class="md:col-span-3">
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-3.5">Studio & Legal</h3>
+          <ul class="space-y-2.5 text-xs text-zinc-500">
+            <li><a href="privacy.html" class="hover:text-white transition-colors">개인정보처리방침</a></li>
+            <li><a href="https://github.com/pixelabx" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a></li>
+            <li><a href="mailto:hello@pixelabx.com" class="hover:text-white transition-colors">Email Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Row -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-600">
+        <p>© 2026 pixelab. All rights reserved.</p>
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/pixelabx" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="text-zinc-500 hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <a href="mailto:hello@pixelabx.com" aria-label="Email" class="text-zinc-500 hover:text-white transition-colors">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="js/i18n.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/pixelWave.js"></script>
+  <!-- Toast Notification -->
+  <div id="toast-banner" role="status" aria-live="polite"
+       class="toast-banner fixed bottom-6 left-1/2 z-50 max-w-md w-[calc(100%-2rem)] px-4 py-3 rounded-xl glass-panel border border-white/[0.12] flex items-center gap-2.5 text-xs sm:text-sm text-zinc-100">
+    <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+    <span id="toast-message">알림</span>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/landing.js"></script>
 </body>
 </html>
