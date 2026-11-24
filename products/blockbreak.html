@@ -1,141 +1,271 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Block Break - 픽셀로 즐기는 클래식 게임 | pixelab">
+  <meta name="description" content="Block Break — 수작업 도트 아트로 즐기는 클래식 아케이드 게임 | pixelab">
   <title>Block Break | pixelab</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/product.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%233B82F6'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%2352525B'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/landing.css">
 </head>
-<body>
-  <!-- 네비게이션 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a href="../index.html">pixelab</a>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="../index.html#home" data-i18n="nav.home">홈</a></li>
-        <li><a href="../index.html#about" data-i18n="nav.about">회사소개</a></li>
-        <li><a href="../index.html#products" data-i18n="nav.products">제품소개</a></li>
-        <li><a href="../privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
-      </ul>
-      <!-- 언어 선택 -->
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ko">KO</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ja">JP</button>
-      </div>
-    </div>
-  </nav>
+<body data-page-title-key="productPage.blockbreak.meta_title" data-product-name="Block Break" class="bg-[#0A0A0A] text-zinc-100 antialiased">
 
-  <!-- 제품 히어로 -->
-  <section class="product-hero" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-    <div class="container">
-      <div class="product-hero-content">
-        <div class="product-icon-large">🎮</div>
-        <h1 class="product-hero-title" data-i18n-html="products.blockbreak.hero_title">픽셀로 즐기는<br>클래식 게임</h1>
-        <p class="product-hero-subtitle" data-i18n="products.blockbreak.hero_subtitle">
-          레트로 감성과 현대적 디자인이 만난 블록 깨기 게임
-        </p>
-        <span class="product-status-large" data-i18n="products.blockbreak.status">기획 중</span>
-      </div>
-    </div>
-  </section>
+  <!-- Sticky Header -->
+  <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 border-b border-white/[0.08] bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 group">
+        <span class="grid grid-cols-2 gap-[3px] w-5 h-5" aria-hidden="true">
+          <span class="rounded-[2px] bg-white"></span>
+          <span class="rounded-[2px] bg-blue-500"></span>
+          <span class="rounded-[2px] bg-zinc-600"></span>
+          <span class="rounded-[2px] bg-white"></span>
+        </span>
+        <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
+      </a>
 
-  <!-- 제품 기능 -->
-  <section class="product-features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">🎨</div>
-          <h3 data-i18n="products.blockbreak.feature1_title">픽셀 아트 디자인</h3>
-          <p data-i18n="products.blockbreak.feature1_desc">
-            아기자기한 픽셀 그래픽으로 향수를 자극하는 비주얼을 구현했습니다.
-          </p>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+        <a href="../index.html#about" data-t="nav.about" class="hover:text-white transition-colors">About</a>
+        <a href="../index.html#products" data-t="nav.products" class="text-white transition-colors">Products</a>
+        <a href="../index.html#faq" data-t="nav.faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../index.html#contact" data-t="nav.contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="inline-flex items-center p-0.5 rounded-full border border-white/[0.1] bg-white/[0.03]" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-switch="ko" aria-pressed="true" class="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/15 text-white transition-colors">KO</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">EN</button>
+          <button type="button" data-lang-switch="ja" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
         </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🏆</div>
-          <h3 data-i18n="products.blockbreak.feature2_title">100개 스테이지</h3>
-          <p data-i18n="products.blockbreak.feature2_desc">
-            쉬운 난이도부터 고난도까지, 끊임없는 도전이 기다립니다.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">💥</div>
-          <h3 data-i18n="products.blockbreak.feature3_title">특수 블록</h3>
-          <p data-i18n="products.blockbreak.feature3_desc">
-            폭탄, 레이저, 멀티볼 등 다양한 특수 블록으로 전략적인 플레이가 가능합니다.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🔊</div>
-          <h3 data-i18n="products.blockbreak.feature4_title">감성적인 사운드</h3>
-          <p data-i18n="products.blockbreak.feature4_desc">
-            블록이 깨질 때마다 들리는 만족스러운 8bit 사운드.
-          </p>
-        </div>
+        <a href="../index.html#products" data-t="productPage.common.back_products" class="hidden sm:inline-block text-xs font-medium text-zinc-400 hover:text-white transition-colors">
+          ← 모든 제품 보기
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 제품 사양 -->
-  <section class="product-specs">
-    <div class="container">
-      <h2 class="section-title" data-i18n="products.blockbreak.specs_title">게임 정보</h2>
-      <div class="specs-grid">
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.blockbreak.specs_platform">플랫폼</div>
-          <div class="spec-value" data-i18n="products.blockbreak.specs_platform_value">iOS, Android</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.blockbreak.specs_size">용량</div>
-          <div class="spec-value" data-i18n="products.blockbreak.specs_size_value">약 20MB</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.blockbreak.specs_features">게임 모드</div>
-          <div class="spec-value" data-i18n="products.blockbreak.specs_features_value">스토리 모드, 아케이드, 타임어택, 대전</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.blockbreak.specs_release">출시 예정</div>
-          <div class="spec-value" data-i18n="products.blockbreak.specs_release_value">2026년 1월</div>
+  <main>
+    <!-- Product Hero -->
+    <section class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
+      <div class="hero-grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-medium text-blue-400 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              <span data-t="productPage.blockbreak.status">기획 중 · 게임</span>
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 mb-2">Block Break · iOS &amp; Android</p>
+            <h1 data-t-html="productPage.blockbreak.hero_title_html" class="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-white leading-[1.15] mb-6">
+              픽셀로 즐기는<br><span class="text-blue-500">클래식 아케이드.</span>
+            </h1>
+            <p data-t="productPage.blockbreak.hero_subtitle" class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-9">
+              레트로 오락실의 손맛과 현대적인 미니멀 디자인이 만났습니다. 짧지만 강렬한 몰입을 선사하는 블록 깨기 게임.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" data-product-store-badge="App Store"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.68-.83 1.14-1.98 1.01-3.13-.98.04-2.17.65-2.87 1.48-.62.72-1.17 1.89-1.02 3.01 1.1.08 2.2-.53 2.88-1.36z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">Download on the</div>
+                  <div class="text-xs font-semibold text-white">App Store</div>
+                </div>
+              </button>
+              <button type="button" data-product-store-badge="Google Play"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">GET IT ON</div>
+                  <div class="text-xs font-semibold text-white">Google Play</div>
+                </div>
+              </button>
+              <a href="mailto:hello@pixelabx.com?subject=%5BBlock%20Break%5D%20Launch%20Notify"
+                 data-t="productPage.common.notify_cta"
+                 class="px-5 py-3.5 text-xs font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+                출시 알림 문의
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Block Break Mockup -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="ambient-blue-glow absolute -inset-12 rounded-full" aria-hidden="true"></div>
+            <div class="phone-frame relative z-10">
+              <div class="phone-screen flex flex-col justify-between px-5 pb-6">
+                <div>
+                  <div class="flex items-center justify-between pt-2.5 px-1 text-[11px] font-medium text-zinc-400">
+                    <span>9:41</span>
+                    <div class="phone-island !m-0"></div>
+                    <span class="text-[10px] font-mono text-blue-400">60FPS</span>
+                  </div>
+
+                  <div class="mt-6 flex items-center justify-between text-[10px] font-mono text-zinc-400 mb-3">
+                    <span>STAGE 12 / 100</span>
+                    <span class="text-blue-400">SCORE 04,820</span>
+                  </div>
+
+                  <div class="rounded-2xl bg-[#111114] border border-white/[0.08] p-4 h-[370px] flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div class="grid grid-cols-6 gap-1.5">
+                        <span class="h-3.5 rounded-[2px] bg-blue-500"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-400"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-400"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500"></span>
+                      </div>
+                      <div class="grid grid-cols-6 gap-1.5">
+                        <span class="h-3.5 rounded-[2px] bg-zinc-600"></span>
+                        <span class="h-3.5 rounded-[2px] bg-transparent"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-500"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-500"></span>
+                        <span class="h-3.5 rounded-[2px] bg-transparent"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-600"></span>
+                      </div>
+                      <div class="grid grid-cols-6 gap-1.5">
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/50"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/50"></span>
+                        <span class="h-3.5 rounded-[2px] bg-transparent"></span>
+                        <span class="h-3.5 rounded-[2px] bg-transparent"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/50"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/50"></span>
+                      </div>
+                      <div class="grid grid-cols-6 gap-1.5">
+                        <span class="h-3.5 rounded-[2px] bg-zinc-800"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-700"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/40"></span>
+                        <span class="h-3.5 rounded-[2px] bg-blue-500/40"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-700"></span>
+                        <span class="h-3.5 rounded-[2px] bg-zinc-800"></span>
+                      </div>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-7 pb-2">
+                      <span class="w-3 h-3 rounded-full bg-white translate-x-7"></span>
+                      <span class="w-20 h-2.5 rounded-full bg-blue-500"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                  <span>♥♥♥</span>
+                  <span class="text-blue-400">8-BIT CHIPTUNE</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 뒤로 가기 -->
-  <section class="back-section">
-    <div class="container">
-      <a href="../index.html#products" class="back-link">← <span data-i18n="nav.back_to_home">홈으로</span></a>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
-          <p data-i18n="footer.description">앱 및 게임 개발</p>
-          <p class="footer-tagline" data-i18n="footer.made_with">Made with passion</p>
+    <!-- Key Features -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="mb-12 reveal">
+          <p data-t="productPage.common.features_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Key Features</p>
+          <h2 data-t="productPage.common.features_title" class="text-3xl font-bold tracking-tight text-white">핵심 기능</h2>
         </div>
-        <div class="footer-links">
-          <a href="../privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6zm9.75 0a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6z" /></svg>
+            </div>
+            <h3 data-t="productPage.blockbreak.f1_title" class="text-lg font-semibold text-white">수작업 픽셀 아트</h3>
+            <p data-t="productPage.blockbreak.f1_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" /></svg>
+            </div>
+            <h3 data-t="productPage.blockbreak.f2_title" class="text-lg font-semibold text-white">100개 핸드크래프트 스테이지</h3>
+            <p data-t="productPage.blockbreak.f2_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+            </div>
+            <h3 data-t="productPage.blockbreak.f3_title" class="text-lg font-semibold text-white">전략적 특수 블록 &amp; 파워업</h3>
+            <p data-t="productPage.blockbreak.f3_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" /></svg>
+            </div>
+            <h3 data-t="productPage.blockbreak.f4_title" class="text-lg font-semibold text-white">오리지널 8-bit 칩튠 사운드</h3>
+            <p data-t="productPage.blockbreak.f4_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
+    </section>
+
+    <!-- Specifications + Philosophy -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-12">
+        <div class="reveal">
+          <p data-t="productPage.common.specs_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Specifications</p>
+          <h2 data-t="productPage.common.specs_title" class="text-3xl font-bold tracking-tight text-white mb-8">제품 사양</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.blockbreak.spec1_label" class="text-xs text-zinc-500">플랫폼</div>
+              <div data-t="productPage.blockbreak.spec1_val" class="text-sm font-semibold text-white mt-1.5">iOS, Android</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.blockbreak.spec2_label" class="text-xs text-zinc-500">앱 용량</div>
+              <div data-t="productPage.blockbreak.spec2_val" class="text-sm font-semibold text-white mt-1.5">약 20MB</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.blockbreak.spec3_label" class="text-xs text-zinc-500">게임 모드</div>
+              <div data-t="productPage.blockbreak.spec3_val" class="text-sm font-semibold text-white mt-1.5">스토리, 아케이드, 타임어택</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.blockbreak.spec4_label" class="text-xs text-zinc-500">플레이 환경</div>
+              <div data-t="productPage.blockbreak.spec4_val" class="text-sm font-semibold text-white mt-1.5">60fps · 오프라인 완벽 지원</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal rounded-3xl border border-white/[0.08] bg-[#111113] p-8 sm:p-12">
+          <p data-t="productPage.blockbreak.why_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Philosophy</p>
+          <h3 data-t="productPage.blockbreak.why_title" class="text-2xl font-bold text-white mb-4">왜 Block Break인가요?</h3>
+          <p data-t="productPage.blockbreak.why_desc" class="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-3xl"></p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08]">
+          <a href="../index.html#products" data-t="productPage.common.back_products" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">← 모든 제품 보기</a>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span data-t="productPage.common.other_products" class="text-zinc-500 mr-1">다른 제품 둘러보기</span>
+            <a href="mp3player.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">MP3 Player</a>
+            <a href="pixeltimer.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Pixel Timer</a>
+            <a href="dailymemo.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Daily Memo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#060607] border-t border-white/[0.08] py-10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <p>© 2026 pixelab. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="../privacy.html" data-t="footer.privacy" class="hover:text-white transition-colors">개인정보처리방침</a>
+        <a href="mailto:hello@pixelabx.com" class="hover:text-white transition-colors">hello@pixelabx.com</a>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+  <div id="toast-banner" role="status" aria-live="polite"
+       class="toast-banner fixed bottom-6 left-1/2 z-50 max-w-md w-[calc(100%-2rem)] px-4 py-3 rounded-xl glass-panel border border-white/[0.12] flex items-center gap-2.5 text-xs sm:text-sm text-zinc-100">
+    <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+    <span id="toast-message">알림</span>
+  </div>
+
+  <script src="../js/landing-i18n.js"></script>
+  <script src="../js/product-i18n.js"></script>
+  <script src="../js/landing.js"></script>
 </body>
 </html>

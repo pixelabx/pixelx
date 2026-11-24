@@ -1,141 +1,251 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Daily Memo - 하루를 기록하는 가장 간단한 방법 | pixelab">
+  <meta name="description" content="Daily Memo — 하루를 기록하는 가장 간단한 로컬-퍼스트 메모 앱 | pixelab">
   <title>Daily Memo | pixelab</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/product.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%233B82F6'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%2352525B'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/landing.css">
 </head>
-<body>
-  <!-- 네비게이션 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a href="../index.html">pixelab</a>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="../index.html#home" data-i18n="nav.home">홈</a></li>
-        <li><a href="../index.html#about" data-i18n="nav.about">회사소개</a></li>
-        <li><a href="../index.html#products" data-i18n="nav.products">제품소개</a></li>
-        <li><a href="../privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
-      </ul>
-      <!-- 언어 선택 -->
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ko">KO</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ja">JP</button>
-      </div>
-    </div>
-  </nav>
+<body data-page-title-key="productPage.dailymemo.meta_title" data-product-name="Daily Memo" class="bg-[#0A0A0A] text-zinc-100 antialiased">
 
-  <!-- 제품 히어로 -->
-  <section class="product-hero" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-    <div class="container">
-      <div class="product-hero-content">
-        <div class="product-icon-large">📝</div>
-        <h1 class="product-hero-title" data-i18n-html="products.dailymemo.hero_title">하루를 기록하는<br>가장 간단한 방법</h1>
-        <p class="product-hero-subtitle" data-i18n="products.dailymemo.hero_subtitle">
-          복잡한 기능 없이, 매일 하나의 메모로 일상을 기록합니다
-        </p>
-        <span class="product-status-large" data-i18n="products.dailymemo.status">기획 중</span>
-      </div>
-    </div>
-  </section>
+  <!-- Sticky Header -->
+  <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 border-b border-white/[0.08] bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 group">
+        <span class="grid grid-cols-2 gap-[3px] w-5 h-5" aria-hidden="true">
+          <span class="rounded-[2px] bg-white"></span>
+          <span class="rounded-[2px] bg-blue-500"></span>
+          <span class="rounded-[2px] bg-zinc-600"></span>
+          <span class="rounded-[2px] bg-white"></span>
+        </span>
+        <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
+      </a>
 
-  <!-- 제품 기능 -->
-  <section class="product-features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">📄</div>
-          <h3 data-i18n="products.dailymemo.feature1_title">하루 한 장</h3>
-          <p data-i18n="products.dailymemo.feature1_desc">
-            매일 하나의 페이지에 자유롭게 작성하세요. 부담 없이 시작할 수 있습니다.
-          </p>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+        <a href="../index.html#about" data-t="nav.about" class="hover:text-white transition-colors">About</a>
+        <a href="../index.html#products" data-t="nav.products" class="text-white transition-colors">Products</a>
+        <a href="../index.html#faq" data-t="nav.faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../index.html#contact" data-t="nav.contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="inline-flex items-center p-0.5 rounded-full border border-white/[0.1] bg-white/[0.03]" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-switch="ko" aria-pressed="true" class="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/15 text-white transition-colors">KO</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">EN</button>
+          <button type="button" data-lang-switch="ja" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
         </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">⚡</div>
-          <h3 data-i18n="products.dailymemo.feature2_title">빠른 작성</h3>
-          <p data-i18n="products.dailymemo.feature2_desc">
-            앱을 열면 바로 작성 화면. 생각이 날 때 즉시 기록하세요.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">📅</div>
-          <h3 data-i18n="products.dailymemo.feature3_title">감성적인 회고</h3>
-          <p data-i18n="products.dailymemo.feature3_desc">
-            달력 뷰로 지난 날들을 둘러보며 추억을 회상할 수 있습니다.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🔒</div>
-          <h3 data-i18n="products.dailymemo.feature4_title">프라이버시 보호</h3>
-          <p data-i18n="products.dailymemo.feature4_desc">
-            모든 메모는 기기에만 저장됩니다. 클라우드 동기화는 선택사항입니다.
-          </p>
-        </div>
+        <a href="../index.html#products" data-t="productPage.common.back_products" class="hidden sm:inline-block text-xs font-medium text-zinc-400 hover:text-white transition-colors">
+          ← 모든 제품 보기
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 제품 사양 -->
-  <section class="product-specs">
-    <div class="container">
-      <h2 class="section-title" data-i18n="products.dailymemo.specs_title">제품 사양</h2>
-      <div class="specs-grid">
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.dailymemo.specs_platform">플랫폼</div>
-          <div class="spec-value" data-i18n="products.dailymemo.specs_platform_value">iOS, Android</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.dailymemo.specs_size">용량</div>
-          <div class="spec-value" data-i18n="products.dailymemo.specs_size_value">약 5MB</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.dailymemo.specs_features">주요 기능</div>
-          <div class="spec-value" data-i18n="products.dailymemo.specs_features_value">일일 메모, 달력 뷰, 검색, 태그, 암호화</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.dailymemo.specs_release">출시 예정</div>
-          <div class="spec-value" data-i18n="products.dailymemo.specs_release_value">2025년 8월</div>
+  <main>
+    <!-- Product Hero -->
+    <section class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
+      <div class="hero-grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-medium text-blue-400 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              <span data-t="productPage.dailymemo.status">기획 중 · 프리뷰</span>
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 mb-2">Daily Memo · iOS &amp; Android</p>
+            <h1 data-t-html="productPage.dailymemo.hero_title_html" class="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-white leading-[1.15] mb-6">
+              하루를 기록하는<br><span class="text-blue-500">가장 간단한 방법.</span>
+            </h1>
+            <p data-t="productPage.dailymemo.hero_subtitle" class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-9">
+              일기를 쓰기엔 부담스럽고 기억만으론 아쉬울 때. 앱을 열면 3초 만에 오늘의 페이지가 펼쳐집니다.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" data-product-store-badge="App Store"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.68-.83 1.14-1.98 1.01-3.13-.98.04-2.17.65-2.87 1.48-.62.72-1.17 1.89-1.02 3.01 1.1.08 2.2-.53 2.88-1.36z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">Download on the</div>
+                  <div class="text-xs font-semibold text-white">App Store</div>
+                </div>
+              </button>
+              <button type="button" data-product-store-badge="Google Play"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">GET IT ON</div>
+                  <div class="text-xs font-semibold text-white">Google Play</div>
+                </div>
+              </button>
+              <a href="mailto:hello@pixelabx.com?subject=%5BDaily%20Memo%5D%20Launch%20Notify"
+                 data-t="productPage.common.notify_cta"
+                 class="px-5 py-3.5 text-xs font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+                출시 알림 문의
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Daily Memo Mockup -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="ambient-blue-glow absolute -inset-12 rounded-full" aria-hidden="true"></div>
+            <div class="phone-frame relative z-10">
+              <div class="phone-screen flex flex-col justify-between px-5 pb-6">
+                <div>
+                  <div class="flex items-center justify-between pt-2.5 px-1 text-[11px] font-medium text-zinc-400">
+                    <span>9:41</span>
+                    <div class="phone-island !m-0"></div>
+                    <span class="text-[10px] font-mono text-emerald-400">● LOCAL</span>
+                  </div>
+
+                  <div class="mt-7">
+                    <div class="text-[11px] font-mono text-zinc-500 mb-1.5">2026.11.24 · TUE</div>
+                    <div data-t="showcase.memo_screen_title" class="text-lg font-semibold text-white mb-4">오늘의 한 줄 기록</div>
+                    <div class="rounded-2xl bg-[#111114] border border-white/[0.08] p-4 text-xs text-zinc-300 leading-relaxed space-y-3 mb-6">
+                      <p data-t="showcase.memo_screen_body">새 랜딩페이지 디자인 완성. 여백이 넉넉해지니 오히려 메시지가 더 선명해졌다.</p>
+                      <p class="text-zinc-500 font-mono">#design #pixelab #daily</p>
+                    </div>
+
+                    <div class="text-[10px] font-mono text-zinc-500 mb-2.5">NOVEMBER STREAK</div>
+                    <div class="grid grid-cols-7 gap-2">
+                      <span class="aspect-square rounded-[4px] bg-blue-500/80"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500/60"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500/40"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500/80"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-zinc-800"></span>
+                      <span class="aspect-square rounded-[4px] bg-blue-500"></span>
+                      <span class="aspect-square rounded-[4px] bg-white"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                  <span>ON-DEVICE ENCRYPTED</span>
+                  <span class="text-blue-400">5MB</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 뒤로 가기 -->
-  <section class="back-section">
-    <div class="container">
-      <a href="../index.html#products" class="back-link">← <span data-i18n="nav.back_to_home">홈으로</span></a>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
-          <p data-i18n="footer.description">앱 및 게임 개발</p>
-          <p class="footer-tagline" data-i18n="footer.made_with">Made with passion</p>
+    <!-- Key Features -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="mb-12 reveal">
+          <p data-t="productPage.common.features_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Key Features</p>
+          <h2 data-t="productPage.common.features_title" class="text-3xl font-bold tracking-tight text-white">핵심 기능</h2>
         </div>
-        <div class="footer-links">
-          <a href="../privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z" /></svg>
+            </div>
+            <h3 data-t="productPage.dailymemo.f1_title" class="text-lg font-semibold text-white">하루 한 장의 여백</h3>
+            <p data-t="productPage.dailymemo.f1_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+            </div>
+            <h3 data-t="productPage.dailymemo.f2_title" class="text-lg font-semibold text-white">3초 만에 바로 기록</h3>
+            <p data-t="productPage.dailymemo.f2_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>
+            </div>
+            <h3 data-t="productPage.dailymemo.f3_title" class="text-lg font-semibold text-white">캘린더 히트맵 회고</h3>
+            <p data-t="productPage.dailymemo.f3_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" /></svg>
+            </div>
+            <h3 data-t="productPage.dailymemo.f4_title" class="text-lg font-semibold text-white">100% 온디바이스 프라이버시</h3>
+            <p data-t="productPage.dailymemo.f4_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
+    </section>
+
+    <!-- Specifications + Philosophy -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-12">
+        <div class="reveal">
+          <p data-t="productPage.common.specs_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Specifications</p>
+          <h2 data-t="productPage.common.specs_title" class="text-3xl font-bold tracking-tight text-white mb-8">제품 사양</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.dailymemo.spec1_label" class="text-xs text-zinc-500">플랫폼</div>
+              <div data-t="productPage.dailymemo.spec1_val" class="text-sm font-semibold text-white mt-1.5">iOS, Android</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.dailymemo.spec2_label" class="text-xs text-zinc-500">앱 용량</div>
+              <div data-t="productPage.dailymemo.spec2_val" class="text-sm font-semibold text-white mt-1.5">약 5MB</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.dailymemo.spec3_label" class="text-xs text-zinc-500">핵심 기능</div>
+              <div data-t="productPage.dailymemo.spec3_val" class="text-sm font-semibold text-white mt-1.5">일일 메모, 캘린더 뷰, 태그, 로컬 암호화</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.dailymemo.spec4_label" class="text-xs text-zinc-500">개발 단계</div>
+              <div data-t="productPage.dailymemo.spec4_val" class="text-sm font-semibold text-white mt-1.5">기획 및 UI 설계 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal rounded-3xl border border-white/[0.08] bg-[#111113] p-8 sm:p-12">
+          <p data-t="productPage.dailymemo.why_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Philosophy</p>
+          <h3 data-t="productPage.dailymemo.why_title" class="text-2xl font-bold text-white mb-4">왜 Daily Memo인가요?</h3>
+          <p data-t="productPage.dailymemo.why_desc" class="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-3xl"></p>
+        </div>
+
+        <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08]">
+          <a href="../index.html#products" data-t="productPage.common.back_products" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">← 모든 제품 보기</a>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span data-t="productPage.common.other_products" class="text-zinc-500 mr-1">다른 제품 둘러보기</span>
+            <a href="mp3player.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">MP3 Player</a>
+            <a href="pixeltimer.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Pixel Timer</a>
+            <a href="blockbreak.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Block Break</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#060607] border-t border-white/[0.08] py-10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <p>© 2026 pixelab. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="../privacy.html" data-t="footer.privacy" class="hover:text-white transition-colors">개인정보처리방침</a>
+        <a href="mailto:hello@pixelabx.com" class="hover:text-white transition-colors">hello@pixelabx.com</a>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+  <div id="toast-banner" role="status" aria-live="polite"
+       class="toast-banner fixed bottom-6 left-1/2 z-50 max-w-md w-[calc(100%-2rem)] px-4 py-3 rounded-xl glass-panel border border-white/[0.12] flex items-center gap-2.5 text-xs sm:text-sm text-zinc-100">
+    <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+    <span id="toast-message">알림</span>
+  </div>
+
+  <script src="../js/landing-i18n.js"></script>
+  <script src="../js/product-i18n.js"></script>
+  <script src="../js/landing.js"></script>
 </body>
 </html>

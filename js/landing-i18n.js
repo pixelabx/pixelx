@@ -59,8 +59,10 @@ const LANDING_TRANSLATIONS = {
       strength3_desc: '손끝의 제스처와 햅틱 피드백까지 세밀하게 조율해, 설명서 없이도 자연스럽게 익숙해집니다.',
     },
     showcase: {
-      eyebrow: 'App Showcase',
-      title: '스크린으로 미리 보는 픽셀연구소',
+      eyebrow: 'Products',
+      title: '꼭 필요한 기능만 정교하게 다듬은 앱',
+      subtitle: '화려한 장식 대신 오래 써도 질리지 않는 미니멀한 인터페이스와 빠른 반응 속도에 집중합니다.',
+      top_link: '앱 랜딩페이지',
       detail_link: '제품 상세 스펙 보기',
       memo_screen_title: '오늘의 한 줄 기록',
       memo_screen_body: '새 랜딩페이지 디자인 완성. 여백이 넉넉해지니 오히려 메시지가 더 선명해졌다.',
@@ -265,8 +267,10 @@ const LANDING_TRANSLATIONS = {
       strength3_desc: 'Every gesture and subtle haptic cue is tuned so the interface feels second-nature without a manual.',
     },
     showcase: {
-      eyebrow: 'App Showcase',
-      title: 'A closer look at pixelab screens',
+      eyebrow: 'Products',
+      title: 'Refined down to what truly matters',
+      subtitle: 'Instead of visual noise, we focus on timeless minimal interfaces and instantaneous responsiveness.',
+      top_link: 'App Page',
       detail_link: 'View full specifications',
       memo_screen_title: 'Today’s Quick Note',
       memo_screen_body: 'Shipped the new studio landing page. More whitespace made every message sharper.',
@@ -471,8 +475,10 @@ const LANDING_TRANSLATIONS = {
       strength3_desc: '指先のジェスチャーとハプティクスまで繊細に調整し、説明書なしでも自然に馴染む操作感を実現します。',
     },
     showcase: {
-      eyebrow: 'App Showcase',
-      title: 'スクリーンで見るピクセル研究所のアプリ',
+      eyebrow: 'Products',
+      title: '本当に必要な機能だけを研ぎ澄ませたアプリ',
+      subtitle: '派手な装飾ではなく、長く使っても飽きないミニマルなUIと軽快なレスポンスに集中しています。',
+      top_link: 'アプリ詳細',
       detail_link: '製品詳細スペックを見る',
       memo_screen_title: '今日の一行メモ',
       memo_screen_body: '新しいランディングページが完成。余白を広げたらメッセージがより鮮明になった。',
@@ -701,4 +707,5 @@ const LandingI18n = {
   },
 };
 
+window.LANDING_TRANSLATIONS = LANDING_TRANSLATIONS;
 window.LandingI18n = LandingI18n;

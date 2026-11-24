@@ -1,151 +1,252 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MP3 Player - 심플하고 직관적인 음악 플레이어 | pixelab">
+  <meta name="description" content="MP3 Player — 심플하고 직관적인 고음질 음악 플레이어 | pixelab">
   <title>MP3 Player | pixelab</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/product.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0A'/%3E%3Crect x='7' y='7' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3Crect x='17' y='7' width='8' height='8' rx='2' fill='%233B82F6'/%3E%3Crect x='7' y='17' width='8' height='8' rx='2' fill='%2352525B'/%3E%3Crect x='17' y='17' width='8' height='8' rx='2' fill='%23FAFAFA'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/landing.css">
 </head>
-<body>
-  <!-- 네비게이션 -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="nav-logo">
-        <a href="../index.html">pixelab</a>
-      </div>
-      <ul class="nav-menu">
-        <li><a href="../index.html#home" data-i18n="nav.home">홈</a></li>
-        <li><a href="../index.html#about" data-i18n="nav.about">회사소개</a></li>
-        <li><a href="../index.html#products" data-i18n="nav.products">제품소개</a></li>
-        <li><a href="../privacy.html" data-i18n="nav.privacy">개인정보처리방침</a></li>
-      </ul>
-      <!-- 언어 선택 -->
-      <div class="language-switcher">
-        <button class="lang-btn active" data-lang="ko">KO</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="ja">JP</button>
-      </div>
-    </div>
-  </nav>
+<body data-page-title-key="productPage.mp3player.meta_title" data-product-name="MP3 Player" class="bg-[#0A0A0A] text-zinc-100 antialiased">
 
-  <!-- 제품 히어로 -->
-  <section class="product-hero" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-    <div class="container">
-      <div class="product-hero-content">
-        <div class="product-icon-large">🎵</div>
-        <h1 class="product-hero-title" data-i18n-html="products.mp3player.hero_title">당신의 음악,<br>심플하게</h1>
-        <p class="product-hero-subtitle" data-i18n="products.mp3player.hero_subtitle">
-          불필요한 기능은 모두 제거하고 음악 감상에만 집중했습니다
-        </p>
-        <span class="product-status-large" data-i18n="products.mp3player.status">개발 중</span>
-      </div>
-    </div>
-  </section>
+  <!-- Sticky Header -->
+  <header id="site-header" class="site-header fixed top-0 inset-x-0 z-50 border-b border-white/[0.08] bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="inline-flex items-center gap-2.5 group">
+        <span class="grid grid-cols-2 gap-[3px] w-5 h-5" aria-hidden="true">
+          <span class="rounded-[2px] bg-white"></span>
+          <span class="rounded-[2px] bg-blue-500"></span>
+          <span class="rounded-[2px] bg-zinc-600"></span>
+          <span class="rounded-[2px] bg-white"></span>
+        </span>
+        <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
+      </a>
 
-  <!-- 제품 기능 -->
-  <section class="product-features">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-item">
-          <div class="feature-icon">📱</div>
-          <h3 data-i18n="products.mp3player.feature1_title">미니멀 인터페이스</h3>
-          <p data-i18n="products.mp3player.feature1_desc">
-            화면 가득 앨범 커버와 재생 버튼만. 음악에만 집중할 수 있습니다.
-          </p>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+        <a href="../index.html#about" data-t="nav.about" class="hover:text-white transition-colors">About</a>
+        <a href="../index.html#products" data-t="nav.products" class="text-white transition-colors">Products</a>
+        <a href="../index.html#faq" data-t="nav.faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="../index.html#contact" data-t="nav.contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="inline-flex items-center p-0.5 rounded-full border border-white/[0.1] bg-white/[0.03]" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-switch="ko" aria-pressed="true" class="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/15 text-white transition-colors">KO</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">EN</button>
+          <button type="button" data-lang-switch="ja" aria-pressed="false" class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
         </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">👆</div>
-          <h3 data-i18n="products.mp3player.feature2_title">직관적인 조작</h3>
-          <p data-i18n="products.mp3player.feature2_desc">
-            스와이프로 곡 넘기기, 탭으로 재생/정지. 더 이상 복잡한 메뉴는 없습니다.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">🎧</div>
-          <h3 data-i18n="products.mp3player.feature3_title">고음질 재생</h3>
-          <p data-i18n="products.mp3player.feature3_desc">
-            FLAC, AAC 등 모든 고음질 포맷을 지원합니다.
-          </p>
-        </div>
-
-        <div class="feature-item">
-          <div class="feature-icon">✨</div>
-          <h3 data-i18n="products.mp3player.feature4_title">스마트 플레이리스트</h3>
-          <p data-i18n="products.mp3player.feature4_desc">
-            자주 듣는 음악을 자동으로 학습하고 추천합니다.
-          </p>
-        </div>
+        <a href="../index.html#products" data-t="productPage.common.back_products" class="hidden sm:inline-block text-xs font-medium text-zinc-400 hover:text-white transition-colors">
+          ← 모든 제품 보기
+        </a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- 제품 사양 -->
-  <section class="product-specs">
-    <div class="container">
-      <h2 class="section-title" data-i18n="products.mp3player.specs_title">제품 사양</h2>
-      <div class="specs-grid">
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.mp3player.specs_platform">플랫폼</div>
-          <div class="spec-value" data-i18n="products.mp3player.specs_platform_value">iOS 14 이상, Android 8 이상</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.mp3player.specs_size">용량</div>
-          <div class="spec-value" data-i18n="products.mp3player.specs_size_value">약 15MB (추가 데이터 불필요)</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.mp3player.specs_format">지원 포맷</div>
-          <div class="spec-value" data-i18n="products.mp3player.specs_format_value">MP3, FLAC, AAC, WAV, ALAC, OGG</div>
-        </div>
-        <div class="spec-item">
-          <div class="spec-label" data-i18n="products.mp3player.specs_release">출시 예정</div>
-          <div class="spec-value" data-i18n="products.mp3player.specs_release_value">2025년 3월</div>
+  <main>
+    <!-- Product Hero -->
+    <section class="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
+      <div class="hero-grid-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-xs font-medium text-blue-400 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+              <span data-t="productPage.mp3player.status">개발 중 · 2026 출시 예정</span>
+            </div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500 mb-2">MP3 Player · iOS &amp; Android</p>
+            <h1 data-t-html="productPage.mp3player.hero_title_html" class="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-white leading-[1.15] mb-6">
+              당신의 음악,<br><span class="text-blue-500">심플하게.</span>
+            </h1>
+            <p data-t="productPage.mp3player.hero_subtitle" class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mb-9">
+              복잡한 설정, 화려한 이펙트, 불필요한 광고와 추천 피드를 모두 덜어냈습니다. 오직 음악과 당신만 남았습니다.
+            </p>
+
+            <!-- Store Badges -->
+            <div class="flex flex-wrap items-center gap-3">
+              <button type="button" data-product-store-badge="App Store"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.96 6.32c.68-.83 1.14-1.98 1.01-3.13-.98.04-2.17.65-2.87 1.48-.62.72-1.17 1.89-1.02 3.01 1.1.08 2.2-.53 2.88-1.36z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">Download on the</div>
+                  <div class="text-xs font-semibold text-white">App Store</div>
+                </div>
+              </button>
+              <button type="button" data-product-store-badge="Google Play"
+                      class="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.12] hover:border-white/25 transition-all text-left">
+                <svg class="w-5 h-5 text-white shrink-0" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                <div class="leading-tight">
+                  <div class="text-[9px] text-zinc-400">GET IT ON</div>
+                  <div class="text-xs font-semibold text-white">Google Play</div>
+                </div>
+              </button>
+              <a href="mailto:hello@pixelabx.com?subject=%5BMP3%20Player%5D%20Launch%20Notify"
+                 data-t="productPage.common.notify_cta"
+                 class="px-5 py-3.5 text-xs font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+                출시 알림 문의
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Dedicated Phone Mockup -->
+          <div class="lg:col-span-5 flex justify-center relative">
+            <div class="ambient-blue-glow absolute -inset-12 rounded-full" aria-hidden="true"></div>
+            <div class="phone-frame relative z-10">
+              <div class="phone-screen flex flex-col justify-between px-5 pb-6">
+                <div>
+                  <div class="flex items-center justify-between pt-2.5 px-1 text-[11px] font-medium text-zinc-400">
+                    <span>9:41</span>
+                    <div class="phone-island !m-0"></div>
+                    <span class="text-[10px] font-mono">FLAC</span>
+                  </div>
+                  <div class="mt-6 rounded-2xl bg-[#111114] border border-white/[0.08] p-5 aspect-square flex flex-col justify-between mb-5">
+                    <div class="flex items-center justify-between text-[10px] font-mono text-zinc-500">
+                      <span>PIXELAB AUDIO</span>
+                      <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    </div>
+                    <div class="flex items-end justify-center gap-1.5 h-20">
+                      <span class="eq-bar w-1.5 h-10 bg-zinc-700 rounded-full" style="animation-delay:0s"></span>
+                      <span class="eq-bar w-1.5 h-16 bg-blue-500/70 rounded-full" style="animation-delay:.15s"></span>
+                      <span class="eq-bar w-1.5 h-20 bg-blue-500 rounded-full" style="animation-delay:.3s"></span>
+                      <span class="eq-bar w-1.5 h-14 bg-white rounded-full" style="animation-delay:.45s"></span>
+                      <span class="eq-bar w-1.5 h-18 bg-blue-500 rounded-full" style="animation-delay:.2s"></span>
+                      <span class="eq-bar w-1.5 h-12 bg-blue-500/60 rounded-full" style="animation-delay:.35s"></span>
+                    </div>
+                    <div class="flex justify-between text-[10px] font-mono text-zinc-500">
+                      <span>48kHz / 24bit</span><span>LOSSLESS</span>
+                    </div>
+                  </div>
+                  <div class="text-base font-semibold text-white">Nocturne in Blue</div>
+                  <div class="text-xs text-zinc-400 mt-0.5">Studio Master · ALAC</div>
+                  <div class="mt-4 h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <div class="w-3/5 h-full bg-blue-500 rounded-full"></div>
+                  </div>
+                  <div class="flex justify-between text-[10px] font-mono text-zinc-500 mt-1.5">
+                    <span>02:14</span><span>03:42</span>
+                  </div>
+                </div>
+                <div class="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+                  <span>GESTURE UI</span>
+                  <span class="text-blue-400">HI-RES ENGINE</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Why This Product Section -->
-  <section class="product-features" style="background: var(--white);">
-    <div class="container">
-      <h2 class="section-title" data-i18n="products.mp3player.why_title">왜 MP3 Player인가</h2>
-      <p style="max-width: 800px; margin: 0 auto; font-size: 18px; line-height: 1.8; color: var(--text-secondary); text-align: center;" data-i18n="products.mp3player.why_desc">
-        시장에는 이미 수많은 음악 플레이어가 있습니다. 하지만 대부분 너무 복잡하거나, 불필요한 기능으로 가득 차 있습니다. 우리는 '음악을 듣는다'는 본질에만 집중했습니다. 설정할 것도, 배울 것도 없습니다. 그저 음악을 재생하세요. 그것만으로 충분합니다.
-      </p>
-    </div>
-  </section>
-
-  <!-- 뒤로 가기 -->
-  <section class="back-section">
-    <div class="container">
-      <a href="../index.html#products" class="back-link">← <span data-i18n="nav.back_to_home">홈으로</span></a>
-    </div>
-  </section>
-
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-info">
-          <h3 data-i18n="footer.company">픽셀연구소 (pixelab)</h3>
-          <p data-i18n="footer.description">앱 및 게임 개발</p>
-          <p class="footer-tagline" data-i18n="footer.made_with">Made with passion</p>
+    <!-- Key Features (2x2 Bento Grid) -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+        <div class="mb-12 reveal">
+          <p data-t="productPage.common.features_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Key Features</p>
+          <h2 data-t="productPage.common.features_title" class="text-3xl font-bold tracking-tight text-white">핵심 기능</h2>
         </div>
-        <div class="footer-links">
-          <a href="../privacy.html" data-i18n="footer.privacy">개인정보처리방침</a>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h12A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6z" /></svg>
+            </div>
+            <h3 data-t="productPage.mp3player.f1_title" class="text-lg font-semibold text-white">미니멀 인터페이스</h3>
+            <p data-t="productPage.mp3player.f1_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" /></svg>
+            </div>
+            <h3 data-t="productPage.mp3player.f2_title" class="text-lg font-semibold text-white">직관적인 한 손 제스처</h3>
+            <p data-t="productPage.mp3player.f2_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg>
+            </div>
+            <h3 data-t="productPage.mp3player.f3_title" class="text-lg font-semibold text-white">무손실 고음질 엔진</h3>
+            <p data-t="productPage.mp3player.f3_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-7">
+            <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75z" /></svg>
+            </div>
+            <h3 data-t="productPage.mp3player.f4_title" class="text-lg font-semibold text-white">스마트 플레이리스트</h3>
+            <p data-t="productPage.mp3player.f4_desc" class="text-sm text-zinc-400 mt-2 leading-relaxed"></p>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2025 pixelab. All rights reserved.</p>
+    </section>
+
+    <!-- Specifications + Philosophy -->
+    <section class="py-20 sm:py-28 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-5 sm:px-8 space-y-12">
+        <div class="reveal">
+          <p data-t="productPage.common.specs_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Specifications</p>
+          <h2 data-t="productPage.common.specs_title" class="text-3xl font-bold tracking-tight text-white mb-8">제품 사양</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.mp3player.spec1_label" class="text-xs text-zinc-500">플랫폼</div>
+              <div data-t="productPage.mp3player.spec1_val" class="text-sm font-semibold text-white mt-1.5">iOS 15+, Android 10+</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.mp3player.spec2_label" class="text-xs text-zinc-500">앱 용량</div>
+              <div data-t="productPage.mp3player.spec2_val" class="text-sm font-semibold text-white mt-1.5">약 15MB (초경량)</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.mp3player.spec3_label" class="text-xs text-zinc-500">지원 포맷</div>
+              <div data-t="productPage.mp3player.spec3_val" class="text-sm font-semibold text-white mt-1.5">FLAC, ALAC, WAV, MP3, AAC, OGG</div>
+            </div>
+            <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-5">
+              <div data-t="productPage.mp3player.spec4_label" class="text-xs text-zinc-500">출시 예정</div>
+              <div data-t="productPage.mp3player.spec4_val" class="text-sm font-semibold text-white mt-1.5">2026년 순차 출시</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Philosophy Card -->
+        <div class="reveal rounded-3xl border border-white/[0.08] bg-[#111113] p-8 sm:p-12">
+          <p data-t="productPage.mp3player.why_eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Philosophy</p>
+          <h3 data-t="productPage.mp3player.why_title" class="text-2xl font-bold text-white mb-4">왜 MP3 Player인가요?</h3>
+          <p data-t="productPage.mp3player.why_desc" class="text-sm sm:text-base text-zinc-400 leading-relaxed max-w-3xl"></p>
+        </div>
+
+        <!-- Explore Other Products -->
+        <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-white/[0.08]">
+          <a href="../index.html#products" data-t="productPage.common.back_products" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors">← 모든 제품 보기</a>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <span data-t="productPage.common.other_products" class="text-zinc-500 mr-1">다른 제품 둘러보기</span>
+            <a href="pixeltimer.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Pixel Timer</a>
+            <a href="dailymemo.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Daily Memo</a>
+            <a href="blockbreak.html" class="px-3 py-1.5 rounded-full border border-white/[0.09] text-zinc-300 hover:text-white hover:border-blue-500/50 transition-colors">Block Break</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#060607] border-t border-white/[0.08] py-10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+      <p>© 2026 pixelab. All rights reserved.</p>
+      <div class="flex items-center gap-5">
+        <a href="../privacy.html" data-t="footer.privacy" class="hover:text-white transition-colors">개인정보처리방침</a>
+        <a href="mailto:hello@pixelabx.com" class="hover:text-white transition-colors">hello@pixelabx.com</a>
       </div>
     </div>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="../js/i18n.js"></script>
-  <script src="../js/main.js"></script>
+  <div id="toast-banner" role="status" aria-live="polite"
+       class="toast-banner fixed bottom-6 left-1/2 z-50 max-w-md w-[calc(100%-2rem)] px-4 py-3 rounded-xl glass-panel border border-white/[0.12] flex items-center gap-2.5 text-xs sm:text-sm text-zinc-100">
+    <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+    <span id="toast-message">알림</span>
+  </div>
+
+  <script src="../js/landing-i18n.js"></script>
+  <script src="../js/product-i18n.js"></script>
+  <script src="../js/landing.js"></script>
 </body>
 </html>

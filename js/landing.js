@@ -237,6 +237,7 @@ function initShowcaseCarousel() {
   const metaPlatforms = document.getElementById('showcase-platforms');
   const metaSpecs = document.getElementById('showcase-specs');
   const metaDetailLink = document.getElementById('showcase-detail-link');
+  const topDetailLink = document.getElementById('showcase-top-link');
 
   if (!track) return;
 
@@ -256,6 +257,7 @@ function initShowcaseCarousel() {
     if (metaTagline) metaTagline.textContent = app.tagline;
     if (metaDesc) metaDesc.textContent = app.description;
     if (metaDetailLink) metaDetailLink.setAttribute('href', app.detailUrl);
+    if (topDetailLink) topDetailLink.setAttribute('href', app.detailUrl);
 
     if (metaPlatforms) {
       metaPlatforms.innerHTML = app.platforms

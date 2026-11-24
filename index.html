@@ -62,11 +62,10 @@
         <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
       </a>
 
-      <!-- Desktop Anchor Navigation -->
+      <!-- Desktop Anchor Navigation (Synced with Section Order) -->
       <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400" aria-label="Primary Navigation">
-        <a href="#products" data-t="nav.products" class="hover:text-white transition-colors">Products</a>
-        <a href="#showcase" data-t="nav.showcase" class="hover:text-white transition-colors">Showcase</a>
         <a href="#about" data-t="nav.about" class="hover:text-white transition-colors">About</a>
+        <a href="#products" data-t="nav.products" class="hover:text-white transition-colors">Products</a>
         <a href="#faq" data-t="nav.faq" class="hover:text-white transition-colors">FAQ</a>
         <a href="#contact" data-t="nav.contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
@@ -83,7 +82,7 @@
                   class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
         </div>
 
-        <a href="#showcase"
+        <a href="#products"
            class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-full transition-colors">
           <span data-t="nav.cta">앱 다운로드</span>
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -110,12 +109,11 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="mobile-drawer md:hidden bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/[0.08]">
       <div class="px-6 py-5 flex flex-col gap-4 text-sm text-zinc-300">
-        <a href="#products" data-t="nav.products" class="py-1 hover:text-white transition-colors">Products</a>
-        <a href="#showcase" data-t="nav.showcase" class="py-1 hover:text-white transition-colors">Showcase</a>
         <a href="#about" data-t="nav.about" class="py-1 hover:text-white transition-colors">About</a>
+        <a href="#products" data-t="nav.products" class="py-1 hover:text-white transition-colors">Products</a>
         <a href="#faq" data-t="nav.faq" class="py-1 hover:text-white transition-colors">FAQ</a>
         <a href="#contact" data-t="nav.contact" class="py-1 hover:text-white transition-colors">Contact</a>
-        <a href="#showcase" data-t="nav.cta" class="mt-2 inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+        <a href="#products" data-t="nav.cta" class="mt-2 inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
           앱 다운로드
         </a>
       </div>
@@ -348,200 +346,47 @@
     </section>
 
     <!-- =========================================================
-         3. 대표 앱 소개 — BENTO GRID
+         3. ABOUT PIXELAB & STUDIO ENGINEERING PHILOSOPHY
     ========================================================== -->
-    <section id="products" class="py-24 sm:py-32 border-t border-white/[0.06]">
+    <section id="about" class="py-24 sm:py-32 border-t border-white/[0.06]">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <!-- Section Header -->
-        <div class="max-w-2xl mb-14 reveal">
-          <p data-t="bento.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Products</p>
-          <h2 data-t="bento.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
-            꼭 필요한 기능만 정교하게 다듬은 앱
-          </h2>
-          <p data-t="bento.subtitle" class="text-zinc-400 text-base leading-relaxed">
-            화려한 장식 대신 오래 써도 질리지 않는 미니멀한 인터페이스와 빠른 반응 속도에 집중합니다.
-          </p>
-        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div class="lg:col-span-5 reveal">
+            <p data-t="about.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">About pixelab</p>
+            <h2 data-t-html="about.title_html" class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-snug">
+              모든 픽셀에는<br>의미가 있습니다.
+            </h2>
+            <p data-t="about.description" class="text-zinc-400 text-sm sm:text-base leading-relaxed mt-5">
+              픽셀연구소(pixelab)는 디지털 화면의 최소 단위인 픽셀처럼, 앱을 이루는 가장 작은 인터랙션 하나까지 집요하게 고민하는 인디 스튜디오입니다.
+              기술은 정교하게, 사용자 경험은 단순하게 만드는 것이 우리의 기준입니다.
+            </p>
+          </div>
 
-        <!-- Bento Grid (12-column asymmetric layout) -->
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-5">
-
-          <!-- Bento 1: MP3 Player (Featured Large, 7 cols) -->
-          <article class="bento-card reveal md:col-span-7 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[340px]">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="inline-flex items-center gap-2 mb-3">
-                  <span data-t="bento.mp3.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/25">개발 중</span>
-                  <span class="text-xs text-zinc-500">iOS · Android</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white tracking-tight">MP3 Player</h3>
-                <p data-t="bento.mp3.desc" class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
-                  광고와 알고리즘 추천을 모두 덜어내고 음악 감상의 본질만 남겼습니다.
-                  FLAC·ALAC 무손실 음원과 한 손 제스처 컨트롤을 지원하는 미니멀 플레이어입니다.
-                </p>
-              </div>
-              <a href="products/mp3player.html" aria-label="MP3 Player"
-                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Inline Visual Preview: Minimal Waveform Bar -->
-            <div class="mt-8 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between gap-4">
-              <div class="flex items-center gap-3.5">
-                <div class="w-10 h-10 rounded-lg bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <div class="text-xs font-medium text-white">Lossless Audio Engine</div>
-                  <div class="text-[11px] text-zinc-500 font-mono">FLAC · ALAC · WAV · 15MB</div>
-                </div>
-              </div>
-              <div class="hidden sm:flex items-end gap-1 h-7">
-                <span class="w-1 h-3 bg-zinc-700 rounded-full"></span>
-                <span class="w-1 h-5 bg-blue-500/70 rounded-full"></span>
-                <span class="w-1 h-7 bg-blue-500 rounded-full"></span>
-                <span class="w-1 h-4 bg-zinc-400 rounded-full"></span>
-                <span class="w-1 h-6 bg-blue-500 rounded-full"></span>
-                <span class="w-1 h-3 bg-zinc-700 rounded-full"></span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Bento 2: Pixel Timer (5 cols) -->
-          <article class="bento-card reveal reveal-delay-1 md:col-span-5 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[340px]">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="inline-flex items-center gap-2 mb-3">
-                  <span data-t="bento.timer.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">프로토타입</span>
-                  <span class="text-xs text-zinc-500">iOS · Android · Web</span>
-                </div>
-                <h3 class="text-2xl font-bold text-white tracking-tight">Pixel Timer</h3>
-                <p data-t="bento.timer.desc" class="text-sm text-zinc-400 mt-2 leading-relaxed">
-                  흐르는 집중 시간을 픽셀 매트릭스로 시각화하는 포모도로 타이머. 초침 대신 고요히 채워지는 픽셀로 몰입을 돕습니다.
-                </p>
-              </div>
-              <a href="products/pixeltimer.html" aria-label="Pixel Timer"
-                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-            </div>
-
-            <!-- Mini Pixel Matrix Graphic -->
-            <div class="mt-8 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between">
-              <div class="grid grid-cols-6 gap-1.5" aria-hidden="true">
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-500"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-blue-400 pixel-pulse"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
-                <span class="w-2.5 h-2.5 rounded-[2px] bg-zinc-800"></span>
-              </div>
-              <div class="text-right">
-                <div class="text-lg font-mono font-semibold text-white">25:00</div>
-                <div class="text-[11px] text-zinc-500">Pomodoro Rhythm</div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Bento 3: Daily Memo (5 cols) -->
-          <article class="bento-card reveal md:col-span-5 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[300px]">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="inline-flex items-center gap-2 mb-3">
-                  <span data-t="bento.memo.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중</span>
-                  <span class="text-xs text-zinc-500">iOS · Android</span>
-                </div>
-                <h3 class="text-xl font-bold text-white tracking-tight">Daily Memo</h3>
-                <p data-t="bento.memo.desc" class="text-sm text-zinc-400 mt-2 leading-relaxed">
-                  앱을 열면 3초 만에 오늘의 페이지가 열립니다. 서버 전송 없는 100% 로컬 퍼스트 일상 기록 앱.
-                </p>
-              </div>
-              <a href="products/dailymemo.html" aria-label="Daily Memo"
-                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-            </div>
-
-            <div class="mt-7 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4">
-              <div class="flex items-center justify-between text-[11px] text-zinc-500 font-mono mb-2">
-                <span>TODAY · NOV 24</span>
-                <span class="text-blue-400">LOCAL ONLY</span>
-              </div>
-              <p data-t="bento.memo.quote" class="text-xs text-zinc-300 leading-relaxed">
-                “복잡한 기능 대신, 매일 한 줄씩 가볍게 남기는 습관.”
+          <div class="lg:col-span-7 divide-y divide-white/[0.08] border-y border-white/[0.08] reveal reveal-delay-1">
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div data-t="about.p1_title" class="sm:col-span-4 text-sm font-semibold text-white">01 · 본질에 집중</div>
+              <p data-t="about.p1_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                기능을 계속 덧붙이기보다, 사용자의 흐름을 방해하는 요소를 하나씩 걷어냅니다. 정말 필요한 기능만 직관적인 자리에 남깁니다.
               </p>
             </div>
-          </article>
-
-          <!-- Bento 4: Block Break (7 cols) -->
-          <article class="bento-card reveal reveal-delay-1 md:col-span-7 rounded-2xl p-7 sm:p-8 flex flex-col justify-between min-h-[300px]">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <div class="inline-flex items-center gap-2 mb-3">
-                  <span data-t="bento.block.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중 · 게임</span>
-                  <span class="text-xs text-zinc-500">iOS · Android</span>
-                </div>
-                <h3 class="text-xl font-bold text-white tracking-tight">Block Break</h3>
-                <p data-t="bento.block.desc" class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
-                  한 픽셀씩 정성스럽게 제작한 도트 아트와 8-bit 칩튠 사운드로 재해석한 클래식 아케이드 블록 깨기.
-                </p>
-              </div>
-              <a href="products/blockbreak.html" aria-label="Block Break"
-                 class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div data-t="about.p2_title" class="sm:col-span-4 text-sm font-semibold text-white">02 · 모던한 완성도</div>
+              <p data-t="about.p2_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                유행에 휩쓸리지 않는 타이포그래피와 여백의 균형, 그리고 플랫폼 네이티브 감각을 존중하는 디자인 시스템을 유지합니다.
+              </p>
             </div>
-
-            <!-- Minimalist Brick Preview -->
-            <div class="mt-7 rounded-xl bg-[#0B0B0D] border border-white/[0.07] p-4 flex items-center justify-between gap-6">
-              <div class="flex-1 space-y-1.5" aria-hidden="true">
-                <div class="grid grid-cols-8 gap-1.5">
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-700"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-700"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500"></span>
-                </div>
-                <div class="grid grid-cols-8 gap-1.5">
-                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500/60"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
-                  <span class="h-2 rounded-[2px] bg-blue-500/60"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-800"></span>
-                  <span class="h-2 rounded-[2px] bg-zinc-600"></span>
-                </div>
-              </div>
-              <div class="text-right shrink-0">
-                <div class="text-xs font-semibold text-white">100 Stages</div>
-                <div class="text-[11px] text-zinc-500 font-mono">60fps · Offline</div>
-              </div>
+            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
+              <div data-t="about.p3_title" class="sm:col-span-4 text-sm font-semibold text-white">03 · 지속 가능한 가치</div>
+              <p data-t="about.p3_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+                단발성 호기심에 그치지 않고, 매일의 루틴 속에서 조용히 효용을 만들어내는 도구를 꾸준히 업데이트합니다.
+              </p>
             </div>
-          </article>
+          </div>
+        </div>
 
-          <!-- Bento 5~7: Studio Technical Strengths (4 cols each) -->
-          <div class="bento-card reveal md:col-span-4 rounded-2xl p-6">
+        <!-- 3 Development Philosophy Cards (Placed below About pixelab) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 mt-14">
+          <div class="bento-card reveal rounded-2xl p-6">
             <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -553,7 +398,7 @@
             </p>
           </div>
 
-          <div class="bento-card reveal reveal-delay-1 md:col-span-4 rounded-2xl p-6">
+          <div class="bento-card reveal reveal-delay-1 rounded-2xl p-6">
             <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" />
@@ -565,7 +410,7 @@
             </p>
           </div>
 
-          <div class="bento-card reveal reveal-delay-2 md:col-span-4 rounded-2xl p-6">
+          <div class="bento-card reveal reveal-delay-2 rounded-2xl p-6">
             <div class="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-blue-400 mb-4">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09z" />
@@ -576,27 +421,29 @@
               손끝의 제스처와 햅틱 피드백까지 세밀하게 조율해, 설명서 없이도 자연스럽게 익숙해집니다.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         4. 앱 상세 쇼케이스 — INTERACTIVE CAROUSEL
+         4. PRODUCTS — INTERACTIVE APP CAROUSEL
     ========================================================== -->
-    <section id="showcase" class="py-24 sm:py-32 border-t border-white/[0.06]">
+    <section id="products" class="py-24 sm:py-32 border-t border-white/[0.06]">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <!-- Header & App Selector Controls -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
-          <div>
-            <p data-t="showcase.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">App Showcase</p>
-            <h2 data-t="showcase.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              스크린으로 미리 보는 픽셀연구소
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 reveal">
+          <div class="max-w-2xl">
+            <p data-t="showcase.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Products</p>
+            <h2 data-t="showcase.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+              꼭 필요한 기능만 정교하게 다듬은 앱
             </h2>
+            <p data-t="showcase.subtitle" class="text-zinc-400 text-base leading-relaxed">
+              화려한 장식 대신 오래 써도 질리지 않는 미니멀한 인터페이스와 빠른 반응 속도에 집중합니다.
+            </p>
           </div>
 
           <!-- Quick App Pills -->
-          <div class="flex flex-wrap items-center gap-2">
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
             <button type="button" data-showcase-pill="0" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-blue-500/60 bg-blue-500/10 text-white transition-colors">MP3 Player</button>
             <button type="button" data-showcase-pill="1" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">Pixel Timer</button>
             <button type="button" data-showcase-pill="2" class="px-3.5 py-1.5 text-xs font-medium rounded-full border border-white/[0.08] text-zinc-400 hover:text-white transition-colors">Daily Memo</button>
@@ -604,20 +451,32 @@
           </div>
         </div>
 
-        <!-- Split Showcase Container -->
+        <!-- Split Carousel Showcase Card -->
         <div class="reveal rounded-3xl border border-white/[0.08] bg-[#111113] p-6 sm:p-10 lg:p-12">
+          <!-- Card Top Header Row: Status + Slide Counter + Top-Right App Landing Page Link -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pb-7 mb-8 border-b border-white/[0.07]">
+            <div class="flex items-center gap-3">
+              <span id="showcase-status" class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-500/15 text-blue-400 border border-blue-500/25">
+                개발 중 · 2026 출시 예정
+              </span>
+              <span id="showcase-index" class="text-xs font-mono text-zinc-500">01 / 04</span>
+            </div>
+
+            <!-- Top-Right Direct Link to App Landing Page -->
+            <a id="showcase-top-link" href="products/mp3player.html"
+               class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/[0.12] bg-white/[0.03] hover:bg-blue-500/15 hover:border-blue-500/50 text-xs font-medium text-zinc-200 hover:text-white transition-all group">
+              <span data-t="showcase.top_link">앱 랜딩페이지</span>
+              <svg class="w-3.5 h-3.5 text-blue-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
+
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
             <!-- Left Column: Active App Details & Store Badges -->
             <div class="lg:col-span-5 flex flex-col justify-between order-2 lg:order-1">
               <div>
-                <div class="flex items-center justify-between mb-5">
-                  <span id="showcase-status" class="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-medium bg-blue-500/15 text-blue-400 border border-blue-500/25">
-                    개발 중 · 2026 출시 예정
-                  </span>
-                  <span id="showcase-index" class="text-xs font-mono text-zinc-500">01 / 04</span>
-                </div>
-
                 <h3 id="showcase-name" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">MP3 Player</h3>
                 <p id="showcase-tagline" class="text-sm font-medium text-blue-400 mt-1.5">당신의 음악, 오직 본질만 남겼습니다.</p>
                 <p id="showcase-desc" class="text-sm text-zinc-400 leading-relaxed mt-4">
@@ -887,48 +746,7 @@
     </section>
 
     <!-- =========================================================
-         5. ABOUT / STUDIO PHILOSOPHY
-    ========================================================== -->
-    <section id="about" class="py-24 sm:py-32 border-t border-white/[0.06]">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div class="lg:col-span-5 reveal">
-            <p data-t="about.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">About pixelab</p>
-            <h2 data-t-html="about.title_html" class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-snug">
-              모든 픽셀에는<br>의미가 있습니다.
-            </h2>
-            <p data-t="about.description" class="text-zinc-400 text-sm sm:text-base leading-relaxed mt-5">
-              픽셀연구소(pixelab)는 디지털 화면의 최소 단위인 픽셀처럼, 앱을 이루는 가장 작은 인터랙션 하나까지 집요하게 고민하는 인디 스튜디오입니다.
-              기술은 정교하게, 사용자 경험은 단순하게 만드는 것이 우리의 기준입니다.
-            </p>
-          </div>
-
-          <div class="lg:col-span-7 divide-y divide-white/[0.08] border-y border-white/[0.08] reveal reveal-delay-1">
-            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div data-t="about.p1_title" class="sm:col-span-4 text-sm font-semibold text-white">01 · 본질에 집중</div>
-              <p data-t="about.p1_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
-                기능을 계속 덧붙이기보다, 사용자의 흐름을 방해하는 요소를 하나씩 걷어냅니다. 정말 필요한 기능만 직관적인 자리에 남깁니다.
-              </p>
-            </div>
-            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div data-t="about.p2_title" class="sm:col-span-4 text-sm font-semibold text-white">02 · 모던한 완성도</div>
-              <p data-t="about.p2_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
-                유행에 휩쓸리지 않는 타이포그래피와 여백의 균형, 그리고 플랫폼 네이티브 감각을 존중하는 디자인 시스템을 유지합니다.
-              </p>
-            </div>
-            <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div data-t="about.p3_title" class="sm:col-span-4 text-sm font-semibold text-white">03 · 지속 가능한 가치</div>
-              <p data-t="about.p3_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
-                단발성 호기심에 그치지 않고, 매일의 루틴 속에서 조용히 효용을 만들어내는 도구를 꾸준히 업데이트합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         6. 자주 묻는 질문 — FAQ ACCORDION
+         5. 자주 묻는 질문 — FAQ ACCORDION
     ========================================================== -->
     <section id="faq" class="py-24 sm:py-32 border-t border-white/[0.06]">
       <div class="max-w-3xl mx-auto px-5 sm:px-8">
@@ -1034,7 +852,7 @@
     </section>
 
     <!-- =========================================================
-         7. CONTACT CTA SECTION
+         6. CONTACT CTA SECTION
     ========================================================== -->
     <section id="contact" class="py-20 sm:py-28 border-t border-white/[0.06]">
       <div class="max-w-4xl mx-auto px-5 sm:px-8 reveal">
@@ -1071,7 +889,7 @@
   </main>
 
   <!-- =========================================================
-       8. FOOTER (Minimal Dark)
+       7. FOOTER (Minimal Dark)
   ========================================================== -->
   <footer class="bg-[#060607] border-t border-white/[0.08] py-14">
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
