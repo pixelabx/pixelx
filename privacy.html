@@ -13,7 +13,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/landing.css">
 </head>
-<body class="bg-[#0A0A0A] text-zinc-100 antialiased">
+<body data-page-title-key="meta.privacy_title" class="bg-[#0A0A0A] text-zinc-100 antialiased">
   <!-- Sticky Header -->
   <header class="fixed top-0 inset-x-0 z-50 bg-[#0A0A0A]/80 backdrop-blur-xl border-b border-white/[0.08]">
     <div class="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
@@ -26,72 +26,72 @@
         </span>
         <span class="text-[17px] font-semibold tracking-tight text-white">pixelab</span>
       </a>
-      <a href="index.html" class="text-xs font-medium text-zinc-400 hover:text-white transition-colors">
-        ← 홈으로 돌아가기
-      </a>
+
+      <div class="flex items-center gap-4">
+        <div class="inline-flex items-center p-0.5 rounded-full border border-white/[0.1] bg-white/[0.03]" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-switch="ko" aria-pressed="true"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/15 text-white transition-colors">KO</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">EN</button>
+          <button type="button" data-lang-switch="ja" aria-pressed="false"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
+        </div>
+
+        <a href="index.html" data-t="nav.back_home" class="hidden sm:inline-block text-xs font-medium text-zinc-400 hover:text-white transition-colors">
+          ← 홈으로 돌아가기
+        </a>
+      </div>
     </div>
   </header>
 
   <main class="max-w-3xl mx-auto px-5 sm:px-8 pt-28 pb-24">
     <div class="pb-8 border-b border-white/[0.08] mb-10">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Legal</p>
-      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">개인정보처리방침</h1>
-      <p class="text-xs text-zinc-500 mt-3 font-mono">최종 수정일: 2025-01-01</p>
+      <p data-t="privacy.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Legal</p>
+      <h1 data-t="privacy.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">개인정보처리방침</h1>
+      <p data-t="privacy.updated" class="text-xs text-zinc-500 mt-3 font-mono">최종 수정일: 2025-01-01</p>
     </div>
 
-    <div class="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 text-sm text-zinc-300 leading-relaxed mb-10">
+    <div data-t="privacy.intro" class="rounded-2xl border border-white/[0.08] bg-[#111113] p-6 text-sm text-zinc-300 leading-relaxed mb-10">
       pixelab('픽셀연구소')는 개인정보 보호법 제30조에 따라 이용자의 개인정보를 보호하고 이와 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이 개인정보 처리방침을 수립·공개합니다.
     </div>
 
     <div class="space-y-10 text-sm text-zinc-400 leading-relaxed">
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">1. 개인정보의 처리 목적</h2>
-        <p class="mb-3">pixelab는 다음의 목적을 위하여 개인정보를 처리합니다. 처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 개인정보보호법 제18조에 따라 별도의 동의를 받는 등 필요한 조치를 이행할 예정입니다.</p>
-        <ul class="list-disc pl-5 space-y-1.5 text-zinc-400">
-          <li>서비스 제공 및 운영: 앱 서비스 제공, 콘텐츠 제공, 맞춤 서비스 제공 및 부정이용 방지</li>
-          <li>회원 관리: 본인확인, 개인 식별, 불량회원의 부정 이용 방지 및 분쟁 조정을 위한 기록 보존</li>
-          <li>고객 지원: 고객 문의 대응, 불만처리 및 공지사항 전달</li>
-        </ul>
+        <h2 data-t="privacy.s1_title" class="text-lg font-semibold text-white mb-3">1. 개인정보의 처리 목적</h2>
+        <p data-t="privacy.s1_body" class="whitespace-pre-line"></p>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">2. 개인정보의 처리 및 보유기간</h2>
-        <p class="mb-3">① pixelab는 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집 시에 동의받은 개인정보 보유·이용기간 내에서 개인정보를 처리·보유합니다.</p>
-        <ul class="list-disc pl-5 space-y-1.5 text-zinc-400">
-          <li>서비스 이용 관련 정보: 회원 탈퇴 시까지</li>
-          <li>계약 또는 청약철회 등에 관한 기록: 5년 (전자상거래법)</li>
-          <li>대금결제 및 재화 등의 공급에 관한 기록: 5년 (전자상거래법)</li>
-          <li>소비자 불만 또는 분쟁처리에 관한 기록: 3년 (전자상거래법)</li>
-          <li>로그인 기록: 3개월 (통신비밀보호법)</li>
-        </ul>
+        <h2 data-t="privacy.s2_title" class="text-lg font-semibold text-white mb-3">2. 개인정보의 처리 및 보유기간</h2>
+        <p data-t="privacy.s2_body" class="whitespace-pre-line"></p>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">3. 정보주체의 권리·의무 및 행사방법</h2>
-        <p class="mb-3">이용자는 pixelab에 대해 언제든지 개인정보 열람 요구, 오류 정정 요구, 삭제 요구, 처리정지 요구 등의 권리를 행사할 수 있습니다. 권리 행사는 전자우편(<a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>)을 통해 하실 수 있으며, pixelab는 이에 대해 지체 없이 조치하겠습니다.</p>
+        <h2 data-t="privacy.s3_title" class="text-lg font-semibold text-white mb-3">3. 정보주체의 권리·의무 및 행사방법</h2>
+        <p data-t="privacy.s3_body" class="whitespace-pre-line"></p>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">4. 개인정보의 파기</h2>
-        <p>pixelab는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다. 전자적 파일 형태의 정보는 복구 및 재생이 불가능한 기술적 방법을 사용하여 완전히 삭제합니다.</p>
+        <h2 data-t="privacy.s4_title" class="text-lg font-semibold text-white mb-3">4. 개인정보의 파기</h2>
+        <p data-t="privacy.s4_body" class="whitespace-pre-line"></p>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">5. 개인정보 보호책임자</h2>
+        <h2 data-t="privacy.s5_title" class="text-lg font-semibold text-white mb-3">5. 개인정보 보호책임자</h2>
         <div class="rounded-xl border border-white/[0.08] bg-[#111113] p-5 space-y-1 text-zinc-300">
-          <p><span class="text-zinc-500">책임자:</span> pixelab 대표</p>
-          <p><span class="text-zinc-500">이메일:</span> <a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a></p>
+          <p><span data-t="privacy.s5_officer_label" class="text-zinc-500">책임자:</span> <span data-t="privacy.s5_officer_value">pixelab 대표</span></p>
+          <p><span data-t="privacy.s5_email_label" class="text-zinc-500">이메일:</span> <a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a></p>
         </div>
       </section>
 
       <section>
-        <h2 class="text-lg font-semibold text-white mb-3">6. 개인정보 처리방침의 변경</h2>
-        <p>이 개인정보 처리방침은 2025년 1월 1일부터 적용됩니다. 법령·정책 또는 보안기술의 변경에 따라 내용의 추가·삭제 및 수정이 있을 시에는 변경사항의 시행 7일 전부터 웹사이트를 통해 공지할 것입니다.</p>
+        <h2 data-t="privacy.s6_title" class="text-lg font-semibold text-white mb-3">6. 개인정보 처리방침의 변경</h2>
+        <p data-t="privacy.s6_body" class="whitespace-pre-line"></p>
       </section>
     </div>
 
     <div class="mt-14 pt-8 border-t border-white/[0.08]">
-      <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+      <a href="index.html" data-t="nav.back_home" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
         ← 홈으로 돌아가기
       </a>
     </div>
@@ -100,5 +100,12 @@
   <footer class="border-t border-white/[0.08] py-8 text-center text-xs text-zinc-600">
     © 2026 pixelab. All rights reserved.
   </footer>
+
+  <script src="js/landing-i18n.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.LandingI18n) window.LandingI18n.init();
+    });
+  </script>
 </body>
 </html>

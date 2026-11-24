@@ -1,6 +1,9 @@
 // pixelab — Interactive Landing Page Script
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.LandingI18n) {
+    window.LandingI18n.init();
+  }
   initStickyHeader();
   initMobileMenu();
   initScrollReveal();
@@ -214,76 +217,11 @@ function initHeroMockup() {
  * 6. App Showcase Carousel
  * --------------------------------------------------------- */
 function initShowcaseCarousel() {
-  const apps = [
-    {
-      id: 'mp3player',
-      index: '01 / 04',
-      status: '개발 중 · 2026 출시 예정',
-      name: 'MP3 Player',
-      tagline: '당신의 음악, 오직 본질만 남겼습니다.',
-      description:
-        '복잡한 추천 피드와 광고를 모두 덜어내고 음악 감상에만 집중한 미니멀 오디오 플레이어입니다. FLAC·ALAC 무손실 음원 재생과 한 손 제스처 컨트롤을 지원합니다.',
-      platforms: ['iOS 15+', 'Android 10+'],
-      specs: [
-        { label: '지원 포맷', value: 'FLAC · ALAC · MP3 · WAV' },
-        { label: '앱 용량', value: '약 15MB 초경량' },
-        { label: '조작 방식', value: '풀 제스처 미니멀 UI' }
-      ],
-      detailUrl: 'products/mp3player.html',
-      hasAndroid: true
-    },
-    {
-      id: 'pixeltimer',
-      index: '02 / 04',
-      status: '개발 예정 · 프로토타입',
-      name: 'Pixel Timer',
-      tagline: '흐르는 시간을 픽셀로 시각화하다.',
-      description:
-        '숫자가 줄어드는 압박감 대신, 25분 포모도로 집중 시간이 픽셀 매트릭스로 차곡차곡 채워집니다. 몰입을 돕는 12가지 절제된 다크·라이트 테마를 제공합니다.',
-      platforms: ['iOS', 'Android', 'Web PWA'],
-      specs: [
-        { label: '핵심 모드', value: '포모도로 · 딥워크 · 스톱워치' },
-        { label: '앱 용량', value: '약 8MB' },
-        { label: '알림 경험', value: '부드러운 앰비언트 햅틱' }
-      ],
-      detailUrl: 'products/pixeltimer.html',
-      hasAndroid: true
-    },
-    {
-      id: 'dailymemo',
-      index: '03 / 04',
-      status: '기획 중 · 프리뷰',
-      name: 'Daily Memo',
-      tagline: '앱을 열면 3초 만에 오늘을 기록합니다.',
-      description:
-        '무거운 폴더 구조나 로그인 절차 없이 하루 한 장의 깨끗한 페이지를 엽니다. 모든 기록은 오직 사용자 기기에만 로컬 저장되어 완벽한 프라이버시를 보장합니다.',
-      platforms: ['iOS', 'Android'],
-      specs: [
-        { label: '데이터 보안', value: '100% 온디바이스 로컬 저장' },
-        { label: '앱 용량', value: '약 5MB' },
-        { label: '핵심 기능', value: '캘린더 히트맵 · 즉시 검색' }
-      ],
-      detailUrl: 'products/dailymemo.html',
-      hasAndroid: true
-    },
-    {
-      id: 'blockbreak',
-      index: '04 / 04',
-      status: '기획 중 · 게임',
-      name: 'Block Break',
-      tagline: '수작업 도트 아트로 재해석한 클래식 아케이드.',
-      description:
-        '한 픽셀씩 정성스레 빚은 레트로 그래픽과 60fps 물리 엔진이 만났습니다. 100개의 전략 스테이지와 칩튠 사운드로 짧지만 강렬한 몰입을 선사합니다.',
-      platforms: ['iOS', 'Android'],
-      specs: [
-        { label: '콘텐츠', value: '100개 핸드크래프트 스테이지' },
-        { label: '오디오', value: '오리지널 8-bit 칩튠' },
-        { label: '플레이', value: '오프라인 완벽 지원' }
-      ],
-      detailUrl: 'products/blockbreak.html',
-      hasAndroid: true
-    }
-  ];
+  const getApps = () => {
+    const localized = window.LandingI18n && window.LandingI18n.get('showcase.apps');
+    if (Array.isArray(localized) && localized.length) return localized;
+    return [];
+  };
 
   const track = document.getElementById('showcase-track');
   const prevBtn = document.getElementById('showcase-prev');
@@ -305,6 +243,8 @@ function initShowcaseCarousel() {
   let current = 0;
 
   const updateShowcase = (idx) => {
+    const apps = getApps();
+    if (!apps.length) return;
     current = (idx + apps.length) % apps.length;
     const app = apps[current];
 
@@ -402,13 +342,22 @@ function initShowcaseCarousel() {
     });
   }
 
-  // Store badge feedback (until official App Store / Play Store URLs go live)
+  // Store badge feedback (localized)
   document.querySelectorAll('[data-store-badge]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      const apps = getApps();
       const store = btn.getAttribute('data-store-badge');
-      const appName = apps[current].name;
-      showToast(`${appName} (${store}) 출시 준비 중입니다. 출시 알림은 hello@pixelabx.com으로 문의해 주세요.`);
+      const appName = apps[current] ? apps[current].name : 'App';
+      const tpl =
+        (window.LandingI18n && window.LandingI18n.get('toast.store_coming_soon')) ||
+        '{app} ({store}) 출시 준비 중입니다. 출시 알림은 hello@pixelabx.com으로 문의해 주세요.';
+      showToast(tpl.replace('{app}', appName).replace('{store}', store));
     });
+  });
+
+  // Re-render current slide info whenever language changes
+  window.addEventListener('landingLanguageChanged', () => {
+    updateShowcase(current);
   });
 
   updateShowcase(0);
@@ -452,9 +401,12 @@ function initContactActions() {
 
   copyButtons.forEach((btn) => {
     btn.addEventListener('click', async () => {
+      const copiedMsg =
+        (window.LandingI18n && window.LandingI18n.get('toast.email_copied')) ||
+        `이메일 주소(${email})가 클립보드에 복사되었습니다.`;
       try {
         await navigator.clipboard.writeText(email);
-        showToast(`이메일 주소(${email})가 클립보드에 복사되었습니다.`);
+        showToast(copiedMsg);
       } catch {
         // Fallback for older browsers
         const temp = document.createElement('input');
@@ -463,7 +415,7 @@ function initContactActions() {
         temp.select();
         document.execCommand('copy');
         document.body.removeChild(temp);
-        showToast(`이메일 주소(${email})가 복사되었습니다.`);
+        showToast(copiedMsg);
       }
     });
   });

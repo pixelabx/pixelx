@@ -44,7 +44,7 @@
   <!-- Custom Minimal Dark Design System -->
   <link rel="stylesheet" href="css/landing.css">
 </head>
-<body class="bg-[#0A0A0A] text-zinc-100 antialiased selection:bg-blue-500/30 selection:text-white">
+<body data-page-title-key="meta.title" class="bg-[#0A0A0A] text-zinc-100 antialiased selection:bg-blue-500/30 selection:text-white">
 
   <!-- =========================================================
        1. STICKY GNB (Header)
@@ -63,19 +63,29 @@
       </a>
 
       <!-- Desktop Anchor Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400" aria-label="주 메뉴">
-        <a href="#products" class="hover:text-white transition-colors">Products</a>
-        <a href="#showcase" class="hover:text-white transition-colors">Showcase</a>
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400" aria-label="Primary Navigation">
+        <a href="#products" data-t="nav.products" class="hover:text-white transition-colors">Products</a>
+        <a href="#showcase" data-t="nav.showcase" class="hover:text-white transition-colors">Showcase</a>
+        <a href="#about" data-t="nav.about" class="hover:text-white transition-colors">About</a>
+        <a href="#faq" data-t="nav.faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" data-t="nav.contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
 
-      <!-- Desktop CTA + Mobile Hamburger -->
-      <div class="flex items-center gap-3">
+      <!-- Language Switcher + CTA + Mobile Hamburger -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <!-- 3-Language Switcher (KO / EN / JP) -->
+        <div class="inline-flex items-center p-0.5 rounded-full border border-white/[0.1] bg-white/[0.03]" role="group" aria-label="Language switcher">
+          <button type="button" data-lang-switch="ko" aria-pressed="true"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full bg-white/15 text-white transition-colors">KO</button>
+          <button type="button" data-lang-switch="en" aria-pressed="false"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">EN</button>
+          <button type="button" data-lang-switch="ja" aria-pressed="false"
+                  class="px-2.5 py-1 text-[11px] font-medium rounded-full text-zinc-400 hover:text-white transition-colors">JP</button>
+        </div>
+
         <a href="#showcase"
            class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-full transition-colors">
-          <span>앱 다운로드</span>
+          <span data-t="nav.cta">앱 다운로드</span>
           <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
           </svg>
@@ -100,12 +110,12 @@
     <!-- Mobile Navigation Drawer -->
     <div id="mobile-drawer" class="mobile-drawer md:hidden bg-[#0A0A0A]/95 backdrop-blur-xl border-b border-white/[0.08]">
       <div class="px-6 py-5 flex flex-col gap-4 text-sm text-zinc-300">
-        <a href="#products" class="py-1 hover:text-white transition-colors">Products</a>
-        <a href="#showcase" class="py-1 hover:text-white transition-colors">Showcase</a>
-        <a href="#about" class="py-1 hover:text-white transition-colors">About</a>
-        <a href="#faq" class="py-1 hover:text-white transition-colors">FAQ</a>
-        <a href="#contact" class="py-1 hover:text-white transition-colors">Contact</a>
-        <a href="#showcase" class="mt-2 inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
+        <a href="#products" data-t="nav.products" class="py-1 hover:text-white transition-colors">Products</a>
+        <a href="#showcase" data-t="nav.showcase" class="py-1 hover:text-white transition-colors">Showcase</a>
+        <a href="#about" data-t="nav.about" class="py-1 hover:text-white transition-colors">About</a>
+        <a href="#faq" data-t="nav.faq" class="py-1 hover:text-white transition-colors">FAQ</a>
+        <a href="#contact" data-t="nav.contact" class="py-1 hover:text-white transition-colors">Contact</a>
+        <a href="#showcase" data-t="nav.cta" class="mt-2 inline-flex items-center justify-center px-4 py-2.5 text-sm font-medium text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
           앱 다운로드
         </a>
       </div>
@@ -130,15 +140,15 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              <span>픽셀연구소 · Independent Mobile App Studio</span>
+              <span data-t="hero.badge">픽셀연구소 · Independent Mobile App Studio</span>
             </div>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-white leading-[1.15] mb-6">
+            <h1 data-t-html="hero.title_html" class="text-4xl sm:text-5xl lg:text-[58px] font-bold tracking-tight text-white leading-[1.15] mb-6">
               일상의 작은 불편을<br>
               <span class="text-blue-500">감각적인 앱</span>으로 해결합니다.
             </h1>
 
-            <p class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-9">
+            <p data-t="hero.subtitle" class="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-9">
               하나하나의 픽셀을 연구하듯, 불필요한 기능과 소음을 과감히 덜어냅니다.
               픽셀연구소는 매일 손이 가는 심플하고 모던한 모바일 경험을 설계합니다.
             </p>
@@ -147,14 +157,14 @@
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 mb-12">
               <a href="#products"
                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-all hover:-translate-y-0.5">
-                <span>대표 앱 보기</span>
+                <span data-t="hero.cta_primary">대표 앱 보기</span>
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
               </a>
               <a href="#about"
                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-medium text-zinc-200 bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.1] hover:border-white/[0.2] rounded-xl transition-all">
-                <span>회사 소개</span>
+                <span data-t="hero.cta_secondary">회사 소개</span>
               </a>
             </div>
 
@@ -162,15 +172,15 @@
             <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/[0.08]">
               <div>
                 <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">4</div>
-                <div class="text-xs text-zinc-500 mt-0.5">Apps in Lab</div>
+                <div data-t="hero.metric1_label" class="text-xs text-zinc-500 mt-0.5">Apps in Lab</div>
               </div>
               <div>
                 <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">iOS · AOS</div>
-                <div class="text-xs text-zinc-500 mt-0.5">Native Craft</div>
+                <div data-t="hero.metric2_label" class="text-xs text-zinc-500 mt-0.5">Native Craft</div>
               </div>
               <div>
                 <div class="text-xl sm:text-2xl font-semibold text-white tracking-tight">0%</div>
-                <div class="text-xs text-zinc-500 mt-0.5">Ad Tracking</div>
+                <div data-t="hero.metric3_label" class="text-xs text-zinc-500 mt-0.5">Ad Tracking</div>
               </div>
             </div>
           </div>
@@ -243,12 +253,12 @@
 
                     <!-- Interactive Playback Controls -->
                     <div class="flex items-center justify-center gap-6">
-                      <button id="hero-prev-btn" type="button" aria-label="이전 곡" class="p-2 text-zinc-400 hover:text-white transition-colors">
+                      <button id="hero-prev-btn" type="button" aria-label="Previous track" class="p-2 text-zinc-400 hover:text-white transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
                         </svg>
                       </button>
-                      <button id="hero-play-btn" type="button" aria-label="일시정지" class="w-12 h-12 rounded-full bg-white text-black hover:bg-zinc-200 flex items-center justify-center transition-transform active:scale-95">
+                      <button id="hero-play-btn" type="button" aria-label="Play or Pause" class="w-12 h-12 rounded-full bg-white text-black hover:bg-zinc-200 flex items-center justify-center transition-transform active:scale-95">
                         <svg id="hero-icon-pause" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
                         </svg>
@@ -256,7 +266,7 @@
                           <path d="M8 5v14l11-7z" />
                         </svg>
                       </button>
-                      <button id="hero-next-btn" type="button" aria-label="다음 곡" class="p-2 text-zinc-400 hover:text-white transition-colors">
+                      <button id="hero-next-btn" type="button" aria-label="Next track" class="p-2 text-zinc-400 hover:text-white transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z" />
                         </svg>
@@ -309,11 +319,11 @@
 
                     <div class="grid grid-cols-2 gap-2">
                       <div class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-center">
-                        <div class="text-[10px] text-zinc-500">오늘 집중</div>
+                        <div data-t="hero.mockup_today_focus" class="text-[10px] text-zinc-500">오늘 집중</div>
                         <div class="text-sm font-semibold text-white mt-0.5">1h 45m</div>
                       </div>
                       <div class="rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-center">
-                        <div class="text-[10px] text-zinc-500">연속 기록</div>
+                        <div data-t="hero.mockup_streak" class="text-[10px] text-zinc-500">연속 기록</div>
                         <div class="text-sm font-semibold text-blue-400 mt-0.5">14 Days</div>
                       </div>
                     </div>
@@ -344,11 +354,11 @@
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <!-- Section Header -->
         <div class="max-w-2xl mb-14 reveal">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Products</p>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
+          <p data-t="bento.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Products</p>
+          <h2 data-t="bento.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
             꼭 필요한 기능만 정교하게 다듬은 앱
           </h2>
-          <p class="text-zinc-400 text-base leading-relaxed">
+          <p data-t="bento.subtitle" class="text-zinc-400 text-base leading-relaxed">
             화려한 장식 대신 오래 써도 질리지 않는 미니멀한 인터페이스와 빠른 반응 속도에 집중합니다.
           </p>
         </div>
@@ -361,16 +371,16 @@
             <div class="flex items-start justify-between gap-4">
               <div>
                 <div class="inline-flex items-center gap-2 mb-3">
-                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/25">개발 중</span>
+                  <span data-t="bento.mp3.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-blue-500/15 text-blue-400 border border-blue-500/25">개발 중</span>
                   <span class="text-xs text-zinc-500">iOS · Android</span>
                 </div>
                 <h3 class="text-2xl font-bold text-white tracking-tight">MP3 Player</h3>
-                <p class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
+                <p data-t="bento.mp3.desc" class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
                   광고와 알고리즘 추천을 모두 덜어내고 음악 감상의 본질만 남겼습니다.
                   FLAC·ALAC 무손실 음원과 한 손 제스처 컨트롤을 지원하는 미니멀 플레이어입니다.
                 </p>
               </div>
-              <a href="products/mp3player.html" aria-label="MP3 Player 자세히 보기"
+              <a href="products/mp3player.html" aria-label="MP3 Player"
                  class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -407,15 +417,15 @@
             <div class="flex items-start justify-between gap-4">
               <div>
                 <div class="inline-flex items-center gap-2 mb-3">
-                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">프로토타입</span>
+                  <span data-t="bento.timer.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">프로토타입</span>
                   <span class="text-xs text-zinc-500">iOS · Android · Web</span>
                 </div>
                 <h3 class="text-2xl font-bold text-white tracking-tight">Pixel Timer</h3>
-                <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                <p data-t="bento.timer.desc" class="text-sm text-zinc-400 mt-2 leading-relaxed">
                   흐르는 집중 시간을 픽셀 매트릭스로 시각화하는 포모도로 타이머. 초침 대신 고요히 채워지는 픽셀로 몰입을 돕습니다.
                 </p>
               </div>
-              <a href="products/pixeltimer.html" aria-label="Pixel Timer 자세히 보기"
+              <a href="products/pixeltimer.html" aria-label="Pixel Timer"
                  class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -451,15 +461,15 @@
             <div class="flex items-start justify-between gap-4">
               <div>
                 <div class="inline-flex items-center gap-2 mb-3">
-                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중</span>
+                  <span data-t="bento.memo.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중</span>
                   <span class="text-xs text-zinc-500">iOS · Android</span>
                 </div>
                 <h3 class="text-xl font-bold text-white tracking-tight">Daily Memo</h3>
-                <p class="text-sm text-zinc-400 mt-2 leading-relaxed">
+                <p data-t="bento.memo.desc" class="text-sm text-zinc-400 mt-2 leading-relaxed">
                   앱을 열면 3초 만에 오늘의 페이지가 열립니다. 서버 전송 없는 100% 로컬 퍼스트 일상 기록 앱.
                 </p>
               </div>
-              <a href="products/dailymemo.html" aria-label="Daily Memo 자세히 보기"
+              <a href="products/dailymemo.html" aria-label="Daily Memo"
                  class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -472,7 +482,7 @@
                 <span>TODAY · NOV 24</span>
                 <span class="text-blue-400">LOCAL ONLY</span>
               </div>
-              <p class="text-xs text-zinc-300 leading-relaxed">
+              <p data-t="bento.memo.quote" class="text-xs text-zinc-300 leading-relaxed">
                 “복잡한 기능 대신, 매일 한 줄씩 가볍게 남기는 습관.”
               </p>
             </div>
@@ -483,15 +493,15 @@
             <div class="flex items-start justify-between gap-4">
               <div>
                 <div class="inline-flex items-center gap-2 mb-3">
-                  <span class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중 · 게임</span>
+                  <span data-t="bento.block.status" class="px-2.5 py-0.5 text-[11px] font-medium rounded-full bg-white/[0.06] text-zinc-300 border border-white/[0.1]">기획 중 · 게임</span>
                   <span class="text-xs text-zinc-500">iOS · Android</span>
                 </div>
                 <h3 class="text-xl font-bold text-white tracking-tight">Block Break</h3>
-                <p class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
+                <p data-t="bento.block.desc" class="text-sm text-zinc-400 mt-2 max-w-md leading-relaxed">
                   한 픽셀씩 정성스럽게 제작한 도트 아트와 8-bit 칩튠 사운드로 재해석한 클래식 아케이드 블록 깨기.
                 </p>
               </div>
-              <a href="products/blockbreak.html" aria-label="Block Break 자세히 보기"
+              <a href="products/blockbreak.html" aria-label="Block Break"
                  class="shrink-0 w-9 h-9 rounded-full border border-white/[0.1] flex items-center justify-center text-zinc-400 hover:text-white hover:border-blue-500/50 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -537,8 +547,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold text-white">초경량 네이티브 성능</h3>
-            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            <h3 data-t="bento.strength1_title" class="text-base font-semibold text-white">초경량 네이티브 성능</h3>
+            <p data-t="bento.strength1_desc" class="text-xs text-zinc-400 mt-2 leading-relaxed">
               평균 15MB 미만의 가벼운 용량과 즉각적인 실행 속도로, 기기 배터리를 낭비하지 않습니다.
             </p>
           </div>
@@ -549,8 +559,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold text-white">프라이버시 퍼스트</h3>
-            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            <h3 data-t="bento.strength2_title" class="text-base font-semibold text-white">프라이버시 퍼스트</h3>
+            <p data-t="bento.strength2_desc" class="text-xs text-zinc-400 mt-2 leading-relaxed">
               불필요한 회원가입이나 광고 추적 코드를 배제하고, 사용자의 데이터를 기기 안에 안전하게 지킵니다.
             </p>
           </div>
@@ -561,8 +571,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09z" />
               </svg>
             </div>
-            <h3 class="text-base font-semibold text-white">절제된 60fps 인터랙션</h3>
-            <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+            <h3 data-t="bento.strength3_title" class="text-base font-semibold text-white">절제된 60fps 인터랙션</h3>
+            <p data-t="bento.strength3_desc" class="text-xs text-zinc-400 mt-2 leading-relaxed">
               손끝의 제스처와 햅틱 피드백까지 세밀하게 조율해, 설명서 없이도 자연스럽게 익숙해집니다.
             </p>
           </div>
@@ -579,8 +589,8 @@
         <!-- Header & App Selector Controls -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">App Showcase</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            <p data-t="showcase.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">App Showcase</p>
+            <h2 data-t="showcase.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               스크린으로 미리 보는 픽셀연구소
             </h2>
           </div>
@@ -651,7 +661,7 @@
 
                 <a id="showcase-detail-link" href="products/mp3player.html"
                    class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-400 hover:text-blue-400 transition-colors">
-                  <span>제품 상세 스펙 보기</span>
+                  <span data-t="showcase.detail_link">제품 상세 스펙 보기</span>
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
@@ -757,9 +767,9 @@
                             <span class="font-mono">2026.11.24</span>
                             <span class="text-emerald-400 font-mono">● SAVED</span>
                           </div>
-                          <div class="text-base font-semibold text-white mb-3">오늘의 한 줄 기록</div>
+                          <div data-t="showcase.memo_screen_title" class="text-base font-semibold text-white mb-3">오늘의 한 줄 기록</div>
                           <div class="rounded-xl bg-[#131317] border border-white/[0.07] p-3.5 text-xs text-zinc-300 leading-relaxed space-y-2.5 mb-4">
-                            <p>새 랜딩페이지 디자인 완성. 여백이 넉넉해지니 오히려 메시지가 더 선명해졌다.</p>
+                            <p data-t="showcase.memo_screen_body">새 랜딩페이지 디자인 완성. 여백이 넉넉해지니 오히려 메시지가 더 선명해졌다.</p>
                             <p class="text-zinc-500">#design #pixelab #daily</p>
                           </div>
                           <!-- Mini Contribution / Habit Calendar -->
@@ -847,21 +857,21 @@
 
               <!-- Carousel Controls & Indicators -->
               <div class="mt-5 flex items-center justify-between">
-                <div class="flex items-center gap-2" role="tablist" aria-label="앱 쇼케이스 슬라이드">
-                  <button type="button" data-showcase-dot="0" aria-label="MP3 Player 보기" class="h-2 w-7 rounded-full bg-blue-500 transition-all"></button>
-                  <button type="button" data-showcase-dot="1" aria-label="Pixel Timer 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
-                  <button type="button" data-showcase-dot="2" aria-label="Daily Memo 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
-                  <button type="button" data-showcase-dot="3" aria-label="Block Break 보기" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                <div class="flex items-center gap-2" role="tablist" aria-label="App showcase slides">
+                  <button type="button" data-showcase-dot="0" aria-label="MP3 Player" class="h-2 w-7 rounded-full bg-blue-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="1" aria-label="Pixel Timer" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="2" aria-label="Daily Memo" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
+                  <button type="button" data-showcase-dot="3" aria-label="Block Break" class="h-2 w-2 rounded-full bg-zinc-700 hover:bg-zinc-500 transition-all"></button>
                 </div>
 
                 <div class="flex items-center gap-2">
-                  <button id="showcase-prev" type="button" aria-label="이전 앱"
+                  <button id="showcase-prev" type="button" aria-label="Previous"
                           class="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 flex items-center justify-center text-zinc-300 hover:text-white transition-colors">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
                     </svg>
                   </button>
-                  <button id="showcase-next" type="button" aria-label="다음 앱"
+                  <button id="showcase-next" type="button" aria-label="Next"
                           class="w-9 h-9 rounded-full border border-white/[0.1] bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/20 flex items-center justify-center text-zinc-300 hover:text-white transition-colors">
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -883,11 +893,11 @@
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div class="lg:col-span-5 reveal">
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">About pixelab</p>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-snug">
+            <p data-t="about.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">About pixelab</p>
+            <h2 data-t-html="about.title_html" class="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-snug">
               모든 픽셀에는<br>의미가 있습니다.
             </h2>
-            <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mt-5">
+            <p data-t="about.description" class="text-zinc-400 text-sm sm:text-base leading-relaxed mt-5">
               픽셀연구소(pixelab)는 디지털 화면의 최소 단위인 픽셀처럼, 앱을 이루는 가장 작은 인터랙션 하나까지 집요하게 고민하는 인디 스튜디오입니다.
               기술은 정교하게, 사용자 경험은 단순하게 만드는 것이 우리의 기준입니다.
             </p>
@@ -895,20 +905,20 @@
 
           <div class="lg:col-span-7 divide-y divide-white/[0.08] border-y border-white/[0.08] reveal reveal-delay-1">
             <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div class="sm:col-span-4 text-sm font-semibold text-white">01 · 본질에 집중</div>
-              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+              <div data-t="about.p1_title" class="sm:col-span-4 text-sm font-semibold text-white">01 · 본질에 집중</div>
+              <p data-t="about.p1_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
                 기능을 계속 덧붙이기보다, 사용자의 흐름을 방해하는 요소를 하나씩 걷어냅니다. 정말 필요한 기능만 직관적인 자리에 남깁니다.
               </p>
             </div>
             <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div class="sm:col-span-4 text-sm font-semibold text-white">02 · 모던한 완성도</div>
-              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+              <div data-t="about.p2_title" class="sm:col-span-4 text-sm font-semibold text-white">02 · 모던한 완성도</div>
+              <p data-t="about.p2_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
                 유행에 휩쓸리지 않는 타이포그래피와 여백의 균형, 그리고 플랫폼 네이티브 감각을 존중하는 디자인 시스템을 유지합니다.
               </p>
             </div>
             <div class="py-6 sm:py-7 grid grid-cols-1 sm:grid-cols-12 gap-3">
-              <div class="sm:col-span-4 text-sm font-semibold text-white">03 · 지속 가능한 가치</div>
-              <p class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
+              <div data-t="about.p3_title" class="sm:col-span-4 text-sm font-semibold text-white">03 · 지속 가능한 가치</div>
+              <p data-t="about.p3_desc" class="sm:col-span-8 text-sm text-zinc-400 leading-relaxed">
                 단발성 호기심에 그치지 않고, 매일의 루틴 속에서 조용히 효용을 만들어내는 도구를 꾸준히 업데이트합니다.
               </p>
             </div>
@@ -923,9 +933,9 @@
     <section id="faq" class="py-24 sm:py-32 border-t border-white/[0.06]">
       <div class="max-w-3xl mx-auto px-5 sm:px-8">
         <div class="text-center mb-14 reveal">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">FAQ</p>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">자주 묻는 질문</h2>
-          <p class="text-sm sm:text-base text-zinc-400 mt-3">
+          <p data-t="faq.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">FAQ</p>
+          <h2 data-t="faq.title" class="text-3xl sm:text-4xl font-bold tracking-tight text-white">자주 묻는 질문</h2>
+          <p data-t="faq.subtitle" class="text-sm sm:text-base text-zinc-400 mt-3">
             앱 지원, 협업 및 파트너십, 채용에 대해 궁금한 점을 정리했습니다.
           </p>
         </div>
@@ -934,14 +944,14 @@
           <!-- FAQ 1 -->
           <div class="accordion-item is-open rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
             <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="true">
-              <span class="text-sm sm:text-base font-medium text-white">앱들은 언제 출시되며 어떤 기기에서 사용할 수 있나요?</span>
+              <span data-t="faq.q1" class="text-sm sm:text-base font-medium text-white">앱들은 언제 출시되며 어떤 기기에서 사용할 수 있나요?</span>
               <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </button>
             <div class="accordion-content">
               <div>
-                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                <p data-t-html="faq.a1_html" class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
                   현재 대표 제품인 MP3 Player를 중심으로 순차 출시를 준비 중이며, iOS와 Android를 모두 지원합니다.
                   출시 알림이나 베타 테스트(TestFlight) 참여를 원하시면 <a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>으로 편하게 연락해 주세요.
                 </p>
@@ -952,14 +962,14 @@
           <!-- FAQ 2 -->
           <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
             <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
-              <span class="text-sm sm:text-base font-medium text-white">앱 사용 중 오류 제보나 기능 제안은 어떻게 하나요?</span>
+              <span data-t="faq.q2" class="text-sm sm:text-base font-medium text-white">앱 사용 중 오류 제보나 기능 제안은 어떻게 하나요?</span>
               <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </button>
             <div class="accordion-content">
               <div>
-                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                <p data-t-html="faq.a2_html" class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
                   이메일(<a href="mailto:hello@pixelabx.com" class="text-blue-400 hover:underline">hello@pixelabx.com</a>)로 사용 중인 기기 모델과 상황을 알려주시면 개발자가 직접 확인하고 영업일 기준 2일 이내에 답변드립니다.
                 </p>
               </div>
@@ -969,14 +979,14 @@
           <!-- FAQ 3 -->
           <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
             <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
-              <span class="text-sm sm:text-base font-medium text-white">기업 협업, 프로덕트 파트너십 또는 외주 문의도 가능한가요?</span>
+              <span data-t="faq.q3" class="text-sm sm:text-base font-medium text-white">기업 협업, 프로덕트 파트너십 또는 외주 문의도 가능한가요?</span>
               <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </button>
             <div class="accordion-content">
               <div>
-                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                <p data-t-html="faq.a3_html" class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
                   네, 픽셀연구소의 디자인 철학과 방향성이 맞는 브랜드 협업, 모바일 MVP 설계 및 공동 개발 제안은 언제든 열려 있습니다.
                   간단한 프로젝트 개요와 일정을 메일로 보내주시면 빠르게 검토해 회신드리겠습니다.
                 </p>
@@ -987,14 +997,14 @@
           <!-- FAQ 4 -->
           <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
             <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
-              <span class="text-sm sm:text-base font-medium text-white">사용자 개인정보와 앱 내 데이터는 안전하게 보호되나요?</span>
+              <span data-t="faq.q4" class="text-sm sm:text-base font-medium text-white">사용자 개인정보와 앱 내 데이터는 안전하게 보호되나요?</span>
               <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </button>
             <div class="accordion-content">
               <div>
-                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                <p data-t-html="faq.a4_html" class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
                   픽셀연구소는 '로컬 퍼스트' 원칙을 따릅니다. 필수적인 경우를 제외하고 서버로 데이터를 전송하지 않으며 제3자 광고 추적 도구를 탑재하지 않습니다.
                   자세한 내용은 <a href="privacy.html" class="text-blue-400 hover:underline">개인정보처리방침</a>에서 확인하실 수 있습니다.
                 </p>
@@ -1005,14 +1015,14 @@
           <!-- FAQ 5 -->
           <div class="accordion-item rounded-2xl border border-white/[0.08] bg-[#111113] transition-colors">
             <button type="button" class="accordion-trigger w-full px-6 py-5 flex items-center justify-between gap-4 text-left" aria-expanded="false">
-              <span class="text-sm sm:text-base font-medium text-white">채용이나 스튜디오 합류 기회는 어떻게 확인하나요?</span>
+              <span data-t="faq.q5" class="text-sm sm:text-base font-medium text-white">채용이나 스튜디오 합류 기회는 어떻게 확인하나요?</span>
               <svg class="accordion-icon w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
             </button>
             <div class="accordion-content">
               <div>
-                <p class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
+                <p data-t-html="faq.a5_html" class="px-6 pb-5 text-sm text-zinc-400 leading-relaxed">
                   현재 소수 정예 인디 스튜디오 형태로 운영 중이며, iOS/Android 엔지니어 및 프로덕트 디자이너와의 프로젝트 단위 협업이나 상시 커피챗은 언제든 환영합니다.
                   포트폴리오나 GitHub 링크와 함께 메일로 인사해 주세요.
                 </p>
@@ -1029,22 +1039,22 @@
     <section id="contact" class="py-20 sm:py-28 border-t border-white/[0.06]">
       <div class="max-w-4xl mx-auto px-5 sm:px-8 reveal">
         <div class="rounded-3xl border border-white/[0.09] bg-[#111113] p-8 sm:p-14 text-center relative overflow-hidden">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Contact</p>
-          <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white">
+          <p data-t="contact.eyebrow" class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-3">Contact</p>
+          <h2 data-t="contact.title" class="text-2xl sm:text-4xl font-bold tracking-tight text-white">
             함께 만들고 싶은 아이디어가 있으신가요?
           </h2>
-          <p class="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto mt-4 leading-relaxed">
+          <p data-t="contact.description" class="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto mt-4 leading-relaxed">
             제품 피드백, 협업 제안, 베타 테스트 문의 등 어떤 이야기든 환영합니다.
             보내주신 모든 메시지는 픽셀연구소 팀이 직접 읽고 답변합니다.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a href="mailto:hello@pixelabx.com?subject=%5Bpixelab%20문의%5D%20"
+            <a href="mailto:hello@pixelabx.com?subject=%5Bpixelab%20Inquiry%5D%20"
                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-400 rounded-xl transition-colors">
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
-              <span>이메일로 문의하기</span>
+              <span data-t="contact.email_btn">이메일로 문의하기</span>
             </a>
 
             <button type="button" data-copy-email
@@ -1077,12 +1087,12 @@
             </span>
             <span class="text-base font-semibold tracking-tight text-white">pixelab</span>
           </a>
-          <p class="text-xs text-zinc-400 leading-relaxed max-w-sm">
+          <p data-t="footer.desc" class="text-xs text-zinc-400 leading-relaxed max-w-sm">
             픽셀연구소 (pixelab) · 모바일 애플리케이션 및 디지털 프로덕트 개발 스튜디오
           </p>
           <div class="text-xs text-zinc-500 space-y-1 pt-1">
-            <p>소재지: 서울특별시 (Seoul, Republic of Korea)</p>
-            <p>문의: <a href="mailto:hello@pixelabx.com" class="text-zinc-400 hover:text-white transition-colors">hello@pixelabx.com</a></p>
+            <p data-t="footer.location">소재지: 서울특별시 (Seoul, Republic of Korea)</p>
+            <p><span data-t="footer.inquiry_label">문의:</span> <a href="mailto:hello@pixelabx.com" class="text-zinc-400 hover:text-white transition-colors">hello@pixelabx.com</a></p>
           </div>
         </div>
 
@@ -1101,7 +1111,7 @@
         <div class="md:col-span-3">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-300 mb-3.5">Studio & Legal</h3>
           <ul class="space-y-2.5 text-xs text-zinc-500">
-            <li><a href="privacy.html" class="hover:text-white transition-colors">개인정보처리방침</a></li>
+            <li><a href="privacy.html" data-t="footer.privacy" class="hover:text-white transition-colors">개인정보처리방침</a></li>
             <li><a href="https://github.com/pixelabx" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">GitHub</a></li>
             <li><a href="mailto:hello@pixelabx.com" class="hover:text-white transition-colors">Email Support</a></li>
           </ul>
@@ -1134,7 +1144,8 @@
     <span id="toast-message">알림</span>
   </div>
 
-  <!-- Vanilla JavaScript -->
+  <!-- Vanilla JavaScript (i18n first, then interactive landing) -->
+  <script src="js/landing-i18n.js"></script>
   <script src="js/landing.js"></script>
 </body>
 </html>
